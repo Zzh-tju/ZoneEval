@@ -19,5 +19,5 @@ Is it possibily achievable? Emm, maybe, but still hard.
 In fact, the detection performance is highly related to the data distribution.
 For CNN-based dense detectors, a zone with more objects means it will recieve much more supervision signals during training, and therefore be endowed much better detection ability.
 While the detection performance will be poor in those zones with less frequency of objects.
-Owing to the photographer's bias, the center zone of the image usually has the most number of objects.
+Owing to the existence of photographer's bias, the center zone of the image usually has the most number of objects.
 From this, we find something amazing that the current evaluation is actually affected by the extreme performance in a tiny zone, i.e., the center zone, commonly.
