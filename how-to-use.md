@@ -3,7 +3,7 @@
 This page is the tutorial to our CVPR 2023, created by [Zhaohui Zheng](https://github.com/Zzh-tju).
 
 ## Note
-### Chapter 1 -- [Introduction](https://github.com/Zzh-tju/SELA/how-to-use#Introduction)
+### Chapter 1 -- [Introduction](https://github.com/Zzh-tju/SELA/blob/main/how-to-use.md#introduction)
 ### Chapter 2 -- Zone measures
 ### Chapter 3 -- SELA
 1
