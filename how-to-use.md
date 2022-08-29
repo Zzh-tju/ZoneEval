@@ -15,7 +15,7 @@ This evaluation paradigm is dominant for years, which is standard, popular, and 
 Is it reliable? Is it able to reflect the real performance of an object detector? We wonder.
 From a historical point of view, the evaluation of object detection is a continual practice of that for image classification, that the evaluation always considers all the detections and Ground-truth (GT) boxes in the whole image zone.
 This is actually based on a hypothesis that the detector can performs uniformly in an image, i.e., the detector can produce almost the same predictions for a given object no matter where it is.
-Is it achievable? Emm, maybe, but still hard.
+Is it possibily achievable? Emm, maybe, but still hard.
 In fact, the detection performance is highly related to the data distribution.
 For CNN-based dense detectors, a zone with more objects means it will recieve much more supervision signals during training, and therefore be endowed much better detection ability.
 While the detection performance will be poor in those zones with less frequency of objects.
