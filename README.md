@@ -2,7 +2,7 @@
 
 # Why does spatial equilibrium matter?
 
-The detector cannot perform uniformly across the zones.
+### The detector cannot perform uniformly across the zones.
 <img src="detection-quality.png"/>
 
 The detection performance is correlated with the object distribution.
