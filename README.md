@@ -25,4 +25,4 @@ where $i\in\{0,1,\cdots,n\}$, $n$ is the number of zones.
 Then, the evaluation zones are disigned to be a series of annular zone $z_i^j=R_i\setminus R_j$.
 We denote the range of the annular zone $z_i^j$ as $(r_i,r_j)$ for brevity.
 
-<div align="center"><img src="zone-range.gif" width="600"/>
+<div align="center"><img src="zone-range.gif" width="300"/>
