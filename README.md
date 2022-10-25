@@ -17,5 +17,6 @@ If you have a fire dataset like this, the detector will be good at detecting fir
 
 ## Zone Evaluation
 
-Let’s start by the definition of evaluation zones. We define a rectangle region $R_i$ like this,
+Let’s start by the definition of evaluation zones. We define a rectangle region $R_i=\text{Rectangle}(p,q)$ like this,
 <img src="rectangle.png"/>
+
