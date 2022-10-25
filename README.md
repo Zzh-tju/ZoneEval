@@ -14,3 +14,8 @@ When the object distribution satisfies the centralized photographer’s bias, th
 If you have a fire dataset like this, the detector will be good at detecting fire in the central zone of the image. But for the zone near to the image border, uh huh, hope you are safe.
 <img src="fire-data.png" width="600"/>
 <img src="fire.png"/>
+
+## Zone Evaluation
+
+Let’s start by the definition of evaluation zones. We define a rectangle region $R_i$ like this,
+<img src="rectangle.png"/>
