@@ -98,8 +98,6 @@ Our SELA is simple that we just need to take one more factor into account, i.e.,
 where $\gamma\geqslant 0$ is a hyper-parameter.
 Now you see SELA relaxes the positive sample selection conditions for objects in the boundary zone.
 Therefore, more anchor points will be selected as the positive samples for them.
-In [ATSS](https://arxiv.org/abs/1912.02424), the assignment follows the same rule except the calculation of the IoU threshold.
-
 
 ### SELA (cost-sensitive learning)
 
