@@ -35,4 +35,4 @@ Then, for an arbitrary evaluation metric $m$, for instance Average Precision (AP
 
 Now that we have 5 ZPs, and they indeed provide more information about the detector's performance. We further present a **S**patial equilibrium **P**recision (SP), and we use this single value to characterize the detection performance for convenient usage.
 
-<div align="center">\mathrm{SP} $=\sum\limits_{i}^{n-1}\mathrm{Area}(z_i^{i+1})\mathrm{ZP}\text{@}z_i^{i+1}$ </div>
+<div align="center"> $\mathrm{SP}=\sum\limits_{i}^{n-1}\mathrm{Area}(z_i^{i+1})\mathrm{ZP}\text{@}z_i^{i+1}$ </div>
