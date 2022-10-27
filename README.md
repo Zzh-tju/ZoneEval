@@ -52,3 +52,14 @@ The difference is, our SP applies this assumption to a series of smaller zones, 
 One can see that when $n=1$, our SP is identical to traditional AP as the term $\mathrm{Area}(z_i^j)=1$, which means that the detectors are assumed to perform uniformly in the whole image zone.
 As $n$ increases, the requirements for spatial equilibrium become stricter and stricter. And a large $n>5$ is also acceptable if a more rigorous spatial equilibrium is required.
 
+### Variance of ZPs
+
+As the detection performance varies across the zones, we further introduce an additional metric to gauge the discrete amplitude among the zone metrics.
+
+Given all the ZPs, we calculate the variance of ZPs,
+
+<div align="center"> $\sigma(ZP) = \frac{\sum_{i=0}^{n-1}(ZP\text{@}z_i^{i+1}-\bar{ZP})^2}{n},$ </div>
+
+where $\bar{ZP}$ is the mean value of ZPs.
+Ideally, if $\sigma(ZP)=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
+In this situation, an object can be well detected without being influenced by its spatial position.
