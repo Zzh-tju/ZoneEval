@@ -80,7 +80,7 @@ from mmdet.core import bbox_xyxy_to_cxcywh
         else:
             return mlvl_bboxes, mlvl_scores, mlvl_labels
 ```
-Then we modify `mmdet/models/detectors/single_stage.py`,
+Note that the above modification is just an example, and you should modify several relevant files to keep the inference normal. Then we modify `mmdet/models/detectors/single_stage.py`,
 
 ```python
     def simple_test(self, img, img_metas, rescale=False):
