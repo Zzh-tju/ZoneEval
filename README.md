@@ -80,7 +80,9 @@ from mmdet.core import bbox_xyxy_to_cxcywh
         else:
             return mlvl_bboxes, mlvl_scores, mlvl_labels
 ```
-Note that the above modification is just an example, and you should modify several relevant files to keep the inference normal. Then we modify `mmdet/models/detectors/single_stage.py`,
+Note that the above modification is just an example, and you should modify several relevant files to keep the inference normal, all because the post-process consists of several functions, e.g., `_get_zone_bboxes_single()` and `get_zone_bboxes()` in `/mmdet/models/dense_heads/base_dense_head.py`.
+
+Then we modify `mmdet/models/detectors/single_stage.py`,
 
 ```python
     def simple_test(self, img, img_metas, rescale=False):
@@ -207,14 +209,14 @@ def multi_gpu_test(model, data_loader, tmpdir=None, gpu_collect=False):
     return results, results0_1, results1_2, results2_3, results3_4, results4_5
 ```
 
-Then, in `tools/test.py`,
+Also, in `tools/test.py`,
 
 ```python
       ......
         outputs, outputs0_1, outputs1_2, outputs2_3, outputs3_4, outputs4_5 = multi_gpu_test(
             model, data_loader, args.tmpdir, args.gpu_collect
             or cfg.evaluation.get('gpu_collect', False))
-                
+        ......
                 if cfg.evaluation.metric == 'bbox':
                     eval_results, metric, _, _= dataset.zone_evaluate(outputs, **eval_kwargs, ri=0.0, rj=0.5)
                     eval_results0_1, metric0_1, _, _ = dataset.zone_evaluate(outputs0_1, **eval_kwargs, ri=0.0, rj=0.1)
@@ -225,8 +227,57 @@ Then, in `tools/test.py`,
       ......
 ```
 
-The same process for selecting the ground-truth boxes in the zone lies in `/mmdet/datasets/coco.py`
+In addition to getting the detections in the zone, we must select the ground-truth boxes in the zone either.
+The relevant modification lies in `/mmdet/datasets/coco.py` (take COCO as example)
 
+```python 
+from .api_wrappers import COCO, COCOeval, COCO_zone_eval
+
+# Add zone_evaluate() function and 
+
+    def evaluate_zone_det_segm(self,
+                          results,
+                          result_files,
+                          coco_gt,
+                          metrics,
+                          logger=None,
+                          classwise=False,
+                          proposal_nums=(100, 300, 1000),
+                          iou_thrs=None,
+                          metric_items=None,
+                          ri=0.0,
+                          rj=0.5):
+
+        ......
+            cocoEval = COCO_zone_eval(coco_gt, coco_det, iou_type, self.coco.imgs, ri, rj)
+```
+
+In `/home/anaconda3/envs/your_env/lib/python3.8/site-packages/pycocotools/cocoeval.py`, we copy the class `COCO_eval` to a new one `COCO_zone_eval:`
+
+```python
+class COCO_zone_eval:
+    def __init__(self, cocoGt=None, cocoDt=None, iouType='segm', imgs=None, ri=0.0, rj=0.5):
+        self.imgs = imgs
+        self.ri = ri 
+        self.rj= rj
+
+    def _prepare(self):
+        ......
+        # set ignore flag
+        for gt in gts:
+            img_w = self.imgs[gt['image_id']]['width']
+            img_h = self.imgs[gt['image_id']]['height']
+            center_x = gt['bbox'][0] + 0.5 * gt['bbox'][2]
+            center_y = gt['bbox'][1] + 0.5 * gt['bbox'][3]
+            ind0 = (center_x <= self.ri*img_w) | ( center_x >= (1-self.ri)*img_w) | ( center_y <= self.ri*img_h) | ( center_y >= (1-self.ri)*img_h)
+            ind1 = (center_x > self.rj*img_w) & ( center_x < (1-self.rj)*img_w) & ( center_y > self.rj*img_h) & ( center_y < (1-self.rj)*img_h)
+            ind2 = ind0 | ind1
+            gt['ignore'] = gt['ignore'] if 'ignore' in gt else 0
+            gt['ignore'] = 'iscrowd' in gt and gt['iscrowd']
+            if ind2 == True:
+                gt['ignore'] = 1
+```
+where we set all the ground-truth boxes whose centers are outside the zone to be 'ignored'.
 
 ### Spatial Equilibrium Precision
 
