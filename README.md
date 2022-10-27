@@ -42,7 +42,7 @@ where $\mathrm{Area}(z)$ calculates the area of the zone $z_i^j$ in the normaliz
  
 <div align="center"> $\mathrm{SP}=0.36\mathrm{ZP}\text{@}z_0^1+0.28\mathrm{ZP}\text{@}z_1^2+0.20\mathrm{ZP}\text{@}z_2^3+0.12\mathrm{ZP}\text{@}z_3^4+0.04\mathrm{ZP}\text{@}z_4^5$ </div>
 
-One can see that when $n=1$, our SP is identical to traditional AP as the term $\mathrm{Area}(z_i^j)=1$ in Eq. \ref{eq:SP}, which means that the detectors are assumed to perform uniformly in the whole image zone.
+One can see that when $n=1$, our SP is identical to traditional AP as the term $\mathrm{Area}(z_i^j)=1$, which means that the detectors are assumed to perform uniformly in the whole image zone.
 Our SP is based on the assumption to the traditional AP, i.e., the detector performs uniformly in the zone.
 The difference is, our SP applies this assumption to a series of smaller zones, rather than the full map for traditional AP.
 As $n$ increases, the requirements for spatial equilibrium become stricter and stricter. And a large $n$ is also acceptable if a more rigorous spatial equilibrium is required.
