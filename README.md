@@ -55,7 +55,6 @@ As $n$ increases, the requirements for spatial equilibrium become stricter and s
 ### Variance of ZPs
 
 As the detection performance varies across the zones, we further introduce an additional metric to gauge the discrete amplitude among the zone metrics.
-
 Given all the ZPs, we calculate the variance of ZPs,
 
 <div align="center"> $\sigma(\mathrm{ZP}) = \sum\limits_{i=0}^{n-1}(\mathrm{ZP}\text{@}z_i^{i+1}-\bar{\mathrm{ZP}})^2/n,$ </div>
