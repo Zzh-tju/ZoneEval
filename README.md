@@ -62,3 +62,13 @@ Given all the ZPs, we calculate the variance of ZPs,
 where $\bar{\mathrm{ZP}}$ is the mean value of ZPs.
 Ideally, if $\sigma(\mathrm{ZP})=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
 In this situation, an object can be well detected without being influenced by its spatial position.
+
+## Spatial Equilibrium Label Assignment (SELA)
+
+To persue spatial equilibrium object detection, a frequency-based approach is straightforward. As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
+
+We map the anchor point coordinate $x^a, y^a$ to a spatial weight $\alpha(x^a, y^a)$ by a spatial weighting function,
+
+<div align="center"> $\alpha(x,y) = 2\max\left\{||x-\frac{W}{2}||_1\frac{1}{W}, ||y-\frac{H}{2}||_1\frac{1}{H}\right\},$ </div>
+
+<div align="center"><img src="spatial-weight.png" width="300"/></div>
