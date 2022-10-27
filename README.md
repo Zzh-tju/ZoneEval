@@ -85,15 +85,15 @@ We know that the fixed label assignment strategy, e.g., the max-IoU assigner, ha
 
 Given the positive IoU threshold $t$, the max-IoU assigner determines the positives and negatives by,
 
-<div align="center"> $\textrm{IoU}(\bm{b}^{a},\bm{b}^{gt})\geqslant t,$ </div>
+<div align="center"> $\textrm{IoU}(b^{a},b^{gt})\geqslant t,$ </div>
 
-where $\bm{b}^{a}$ and $\bm{b}^{gt}$ denote the preset anchor boxes and the ground-truth boxes.
+where $b^{a}$ and $b^{gt}$ denote the preset anchor boxes and the ground-truth boxes.
 In RetinaNet and RPN, $t=0.5$ is a constant.
 In [ATSS](https://arxiv.org/abs/1912.02424), the assignment follows the same rule except the calculation of the IoU threshold.
 
 Our SELA is simple that we just need to take one more factor into account, i.e., the spatial weight.
 
-<div align="center"> $\textrm{IoU}(\bm{b}^a,\bm{b}^{gt})\geqslant t-\gamma\alpha(x^{a},y^{a}),$ </div>
+<div align="center"> $\textrm{IoU}(b^a,b^{gt})\geqslant t-\gamma\alpha(x^{a},y^{a}),$ </div>
 
 where $\gamma\geqslant 0$ is a hyper-parameter.
 Now you see SELA relaxes the positive sample selection conditions for objects in the boundary zone.
