@@ -106,3 +106,10 @@ Let $\mathcal{L}$ be the loss function of a given positive anchor point $(x^a, y
 It calculates the classification loss and bbox regression loss.
 Now we just need to re-weight this term by
 <div align="center"> $\mathcal{L}=\mathcal{L}*(1+\gamma\alpha(x^{a},y^{a}))$ </div>
+
+The above two methods relieve the network from paying too much attention to the central objects. We can 
+
+| $\gamma$ | ZP@ $z_0^5$ | ZP@ $z_0^1$ | ZP@ $z_1^2$ |  ZP@ $z_2^3$ |  ZP@ $z_3^4$ |  ZP@ $z_4^5$ | Variance | SP |
+|----------|-------------|-------------|-------------|--------------|--------------|--------------|----------|----|
+|0    | 51.9 | 31.5 | 37.7 | 40.1 | 43.4 | 52.8 | 49.4 | 37.2 |
+|0.2  | 52.5 | 33.9 | 38.6 | 41.5 | 43.3 | 52.5 | 37.9 | 38.6 |
