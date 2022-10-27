@@ -333,7 +333,6 @@ This variable `spatial_weights` will be processed by the same process as `label_
         # SELA on classification loss
         if self.gamma is not None:
             label_weights = label_weights[pos_inds] * (spatial_weights[pos_inds] * self.gamma + 1)
-
         loss_cls =  self.loss_cls(
             cls_score, (labels, score),
             weight=label_weights,
