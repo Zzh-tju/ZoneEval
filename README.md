@@ -18,6 +18,8 @@ If you have a fire dataset like this, the detector will be good at detecting fir
 
 ## Zone Evaluation
 
+### Zone Precision
+
 Let’s start by the definition of evaluation zones. We define a rectangle region $R_i=\text{Rectangle}(p,q)=\text{Rectangle}((r_iW,r_iH),((1-r_i)W,(1-r_i)H))$ like this, 
 <div align="center"><img src="rectangle.png" width="300"/></div>
 
@@ -32,6 +34,8 @@ We measure the detection performance for a specific zone $z_i^j$ by only conside
 Then, for an arbitrary evaluation metric $m$, for instance Average Precision (AP), the evaluation process stays the same to the conventional ways, yielding Zone Precision (ZP), denoted by ZP@ $z_i^j$. Consider the default setting $n=5$, the evaluation zones look like this,
 
 <div align="center"><img src="eval-zone.png" width="300"/></div>
+
+### Spatial Equilibrium Precision
 
 Now that we have 5 ZPs, and they indeed provide more information about the detector's performance. We further present a **S**patial equilibrium **P**recision (SP), and we use this single value to characterize the detection performance for convenient usage.
 
