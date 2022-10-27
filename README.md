@@ -35,6 +35,8 @@ Then, for an arbitrary evaluation metric $m$, for instance Average Precision (AP
 
 <div align="center"><img src="eval-zone.png" width="300"/></div>
 
+For implementation, please refer to [implementation](implementation.md).
+
 ### Spatial Equilibrium Precision
 
 Now that we have 5 ZPs, and they indeed provide more information about the detector's performance. We further present a **S**patial equilibrium **P**recision (SP), and we use this single value to characterize the detection performance for convenient usage.
