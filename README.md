@@ -67,7 +67,7 @@ In this situation, an object can be well detected without being influenced by it
 
 To persue spatial equilibrium object detection, a frequency-based approach is straightforward. As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
 
-We map the anchor point coordinate $x^a, y^a$ to a spatial weight $\alpha(x^a, y^a)$ by a spatial weighting function,
+We map the anchor point coordinate $(x^a, y^a)$ to a spatial weight $\alpha(x^a, y^a)$ by a spatial weighting function,
 
 <div align="center"> $\alpha(x,y) = 2\max\left\{||x-\frac{W}{2}||_1\frac{1}{W}, ||y-\frac{H}{2}||_1\frac{1}{H}\right\},$ </div>
 
@@ -76,3 +76,35 @@ We map the anchor point coordinate $x^a, y^a$ to a spatial weight $\alpha(x^a, y
 Obviously, the spatial weight has the following properties:
 
 (1) Non-negativity; (2) Bounded by $[0,1]$; (3) $\lim\limits_{(x,y)\rightarrow (\frac{W}{2},\frac{H}{2})}\alpha(x,y)=0$; and (4) When $p$ is located at the image border, $\lim\limits_{(x,y)\rightarrow p}\alpha(x,y)\rightarrow 1$.
+
+The usage of spatial weight is multi-optional. We now provide two implementations. One is frequency-based approach, and another is cost-sensitive learning approach.
+
+### SELA (frequency-based)
+
+We know that the fixed label assignment strategy, e.g., the max-IoU assigner, has been popular for years.
+
+Given the positive IoU threshold $t$, the max-IoU assigner determines the positives and negatives by,
+
+<div align="center"> $\textrm{IoU}(\bm{b}^{a},\bm{b}^{gt})\geqslant t,$ </div>
+
+where $\bm{b}^{a}$ and $\bm{b}^{gt}$ denote the preset anchor boxes and the ground-truth boxes.
+In RetinaNet and RPN, $t=0.5$ is a constant.
+In [ATSS](https://arxiv.org/abs/1912.02424), the assignment follows the same rule except the calculation of the IoU threshold.
+
+Our SELA is simple that we just need to take one more factor into account, i.e., the spatial weight.
+
+<div align="center"> $\textrm{IoU}(\bm{b}^a,\bm{b}^{gt})\geqslant t-\gamma\alpha(x^{a},y^{a}),$ </div>
+
+where $\gamma\geqslant 0$ is a hyper-parameter.
+Now you see SELA relaxes the positive sample selection conditions for objects in the boundary zone.
+Therefore, more anchor points will be selected as the positive samples for them.
+In [ATSS](https://arxiv.org/abs/1912.02424), the assignment follows the same rule except the calculation of the IoU threshold.
+
+
+### SELA (cost-sensitive learning)
+
+We exploit the spatial weight to enlarge the loss weight for positive samples.
+Let $\mathcal{L}$ be the loss function of a given positive anchor point $(x^a, y^a)$.
+It calculates the classification loss and bbox regression loss.
+Now we just need to re-weight this term by
+<div align="center"> $\mathcal{L}=\mathcal{L}(1+\gamma\alpha(x^{a},y^{a}))$ </div>
