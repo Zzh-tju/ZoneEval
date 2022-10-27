@@ -107,7 +107,7 @@ It calculates the classification loss and bbox regression loss.
 Now we just need to re-weight this term by
 <div align="center"> $\mathcal{L}=\mathcal{L}*(1+\gamma\alpha(x^{a},y^{a}))$ </div>
 
-The above two methods relieve the network from paying too much attention to the central objects. We can 
+The above two methods relieve the network from paying too much attention to the central objects. The following table is reported by VOC 07+12 protocol.
 
 | Method | $\gamma$ | ZP@ $z_0^5$ | ZP@ $z_0^1$ | ZP@ $z_1^2$ |  ZP@ $z_2^3$ |  ZP@ $z_3^4$ |  ZP@ $z_4^5$ | Variance | SP |
 |--------|----------|-------------|-------------|-------------|--------------|--------------|--------------|----------|----|
