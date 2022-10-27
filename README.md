@@ -81,7 +81,7 @@ The usage of spatial weight is multi-optional. We now provide two implementation
 
 ### SELA (frequency-based)
 
-We know that the fixed label assignment strategy, e.g., the max-IoU assigner, has been popular for years.
+We know that the fixed label assignment strategy, e.g., the max-IoU assigner, is popular for years.
 
 Given the positive IoU threshold $t$, the max-IoU assigner determines the positives and negatives by,
 
