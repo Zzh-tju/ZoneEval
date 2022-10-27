@@ -40,5 +40,5 @@ Now that we have 5 ZPs, and they indeed provide more information about the detec
 where $\mathrm{Area}(z)$ calculates the area of the zone $z_i^j$ in the normalized image space (square image with unit area 1). In general, SP is a weighted sum of the
  5 ZPs, that is,
  
-<div align="center"> $\mathrm{SP}=0.36\mathrm{ZP}\text{@}z_0^1+0.28\mathrm{ZP}\text{@}z_1^2$+0.20\mathrm{ZP}\text{@}z_2^3+0.12\mathrm{ZP}\text{@}z_3^4+0.04\mathrm{ZP}\text{@}z_4^5</div>
+<div align="center"> $\mathrm{SP}=0.36\mathrm{ZP}\text{@}z_0^1+0.28\mathrm{ZP}\text{@}z_1^2+0.20\mathrm{ZP}\text{@}z_2^3+0.12\mathrm{ZP}\text{@}z_3^4+0.04\mathrm{ZP}\text{@}z_4^5$ </div>
 
