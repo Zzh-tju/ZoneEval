@@ -72,3 +72,7 @@ We map the anchor point coordinate $x^a, y^a$ to a spatial weight $\alpha(x^a, y
 <div align="center"> $\alpha(x,y) = 2\max\left\{||x-\frac{W}{2}||_1\frac{1}{W}, ||y-\frac{H}{2}||_1\frac{1}{H}\right\},$ </div>
 
 <div align="center"><img src="spatial-weight.png" width="300"/></div>
+
+Obviously, the spatial weight has the following properties:
+
+(1) Non-negativity; (2) Bounded by $[0,1]$; (3) $\lim\limits_{(x,y)\rightarrow (\frac{W}{2},\frac{H}{2})}\alpha(x,y)=0$; and (4) When $p$ is located at the boundary of the input image, $\lim\limits_{(x,y)\rightarrow p}\alpha(x,y)\rightarrow 1$.
