@@ -26,3 +26,6 @@ Then, the evaluation zones are disigned to be a series of annular zone $z_i^j=R_
 We denote the range of the annular zone $z_i^j$ as $(r_i,r_j)$ for brevity.
 
 <div align="center"><img src="zone-range.gif" width="300"/></div>
+
+We measure the detection performance for a specific zone $z$ by only considering the ground-truth objects and the detections whose centers lie in the zone $z$.
+Then, for an arbitrary evaluation metric $m$, for instance Average Precision (AP), the evaluation process stays the same to the conventional ways, yielding Zone Precision (ZP).
