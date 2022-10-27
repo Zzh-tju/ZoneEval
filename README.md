@@ -83,7 +83,7 @@ The usage of spatial weight is multi-optional. We now provide two implementation
 
 We know that the fixed label assignment strategy, e.g., the max-IoU assigner, is popular for years.
 
-Given the positive IoU threshold $t$, the max-IoU assigner determines the positives and negatives by,
+Given the positive IoU threshold $t$, the max-IoU assigner determines the positive samples by,
 
 <div align="center"> $\textrm{IoU}(B^{a},B^{gt})\geqslant t,$ </div>
 
