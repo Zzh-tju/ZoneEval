@@ -105,4 +105,4 @@ We exploit the spatial weight to enlarge the loss weight for positive samples.
 Let $\mathcal{L}$ be the loss function of a given positive anchor point $(x^a, y^a)$.
 It calculates the classification loss and bbox regression loss.
 Now we just need to re-weight this term by
-<div align="center"> $\mathcal{L}=\mathcal{L}(1+\gamma\alpha(x^{a},y^{a}))$ </div>
+<div align="center"> $\mathcal{L}=\mathcal{L}*(1+\gamma\alpha(x^{a},y^{a}))$ </div>
