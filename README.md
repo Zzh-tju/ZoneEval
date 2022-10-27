@@ -58,8 +58,8 @@ As the detection performance varies across the zones, we further introduce an ad
 
 Given all the ZPs, we calculate the variance of ZPs,
 
-<div align="center"> $\sigma(ZP) = \frac{\sum\limits_{i=0}^{n-1}(ZP\text{@}z_i^{i+1}-\bar{ZP})^2}{n},$ </div>
+<div align="center"> $\sigma(\mathrm{ZP}) = \sum\limits_{i=0}^{n-1}(\mathrm{ZP}\text{@}z_i^{i+1}-\bar{\mathrm{ZP}})^2/n,$ </div>
 
-where $\bar{ZP}$ is the mean value of ZPs.
-Ideally, if $\sigma(ZP)=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
+where $\bar{\mathrm{ZP}}$ is the mean value of ZPs.
+Ideally, if $\sigma(\mathrm{ZP})=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
 In this situation, an object can be well detected without being influenced by its spatial position.
