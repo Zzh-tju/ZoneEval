@@ -35,7 +35,7 @@ Then, for an arbitrary evaluation metric, for instance Average Precision (AP), t
 
 <div align="center"><img src="eval-zone.png" width="300"/></div>
 
-For implementation, please refer to [implementation](implementation.md).
+For implementation, please refer to [Zone evaluation](implementation.md).
 
 ### Spatial Equilibrium Precision
 
@@ -115,4 +115,4 @@ The above two methods relieve the network from paying too much attention to the 
 | SELA (frequency-based)|0.2  | 52.5 | 33.9 | 38.6 | 41.5 | 43.3 | 52.5 | 37.9 | 38.6 |
 | SELA (cost-sensitive learning)| 0.1  | 52.1 | 33.2 | 38.7 | 40.8 | 43.2 | 53.0 | 46.7 | 38.3 |
 
-The implementation can be seen in [implementation](https://github.com/Zzh-tju/SELA/blob/main/implementation.md#implementation-of-sela).
+The implementation can be seen in [SELA implementation](https://github.com/Zzh-tju/SELA/blob/main/implementation.md#implementation-of-sela).
