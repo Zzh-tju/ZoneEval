@@ -1,4 +1,4 @@
-### Implementation of Zone Evaluation
+## Implementation of Zone Evaluation
 
 Let’s see what this looks like in practice.
 
@@ -241,3 +241,101 @@ class COCO_zone_eval:
                 gt['ignore'] = 1
 ```
 where we set all the ground-truth boxes whose centers are outside the zone to be 'ignored'.
+
+## Implementation of SELA
+
+### SELA (frequency-based)
+
+1. `configs/sela/gfl_sela_r18_fpn_1x_voc.py`
+
+```python
+model = dict(
+    train_cfg = dict(
+        assigner=dict(type='ATSSAssigner', topk=9, gamma=0.2),
+        allowed_border=-1,
+        pos_weight=-1,
+        debug=False))
+```
+
+2. `mmdet/models/dense_heads/gfl_sela_head.py`
+
+```python
+    def _get_target_single(......):
+        # get the image width and height, that must match the bbox coordinates.
+        img_w = img_meta['img_shape'][1]
+        img_h = img_meta['img_shape'][0]
+        ......
+        assign_result = self.assigner.assign(anchors, num_level_anchors_inside,
+                                             gt_bboxes, gt_bboxes_ignore,
+                                             gt_labels, img_w=img_w, img_h=img_h)
+        ......
+```
+3. `mmdet/core/bbox/assigners/atss_assigner.py`
+
+```python
+    def assign(self,
+               bboxes,
+               num_level_bboxes,
+               gt_bboxes,
+               gt_bboxes_ignore=None,
+               gt_labels=None,
+               cls_scores=None,
+               bbox_preds=None,
+               img_w=0,    # add the two variables
+               img_h=0):
+        ......
+        if self.gamma is not None:
+            spatial_weight = 2*torch.max(torch.abs(gt_cx - 0.5*img_w)/img_w, torch.abs(gt_cy - 0.5*img_h)/img_h)
+            is_pos = candidate_overlaps >= overlaps_thr_per_gt[None, :] - self.gamma * spatial_weight    # SELA
+        else:
+            is_pos = candidate_overlaps >=  overlaps_thr_per_gt[None, :]    # ATSS
+        ......
+```
+
+### SELA (cost-sensitive learning)
+
+1. `configs/sela/gfl_sela_cost_sensitive_learning_r18_fpn_1x_voc.py`
+
+```python
+model = dict(
+    bbox_head=dict(gamma=0.1))
+```
+
+2. `mmdet/models/dense_heads/gfl_sela_head.py`
+
+```python
+    def _get_target_single(......):
+        ......
+        spatial_weights = anchors.new_ones(num_valid_anchors, dtype=torch.float)
+        xywh_anchors = bbox_xyxy_to_cxcywh(anchors)
+        if self.cost_sensitive_learning = True:
+            spatial_weights = 2*torch.max(torch.abs(xywh_anchors[:,0] - 0.5*img_w)/img_w, torch.abs(xywh_anchors[:,1] - 0.5*img_h)/img_h)
+```
+
+This variable `spatial_weights` will be processed by the same process as `label_weights`.
+
+```python
+    def loss_single(self, anchors, cls_score, bbox_pred, labels, label_weights, spatial_weights,
+                    bbox_targets, stride, num_total_samples):
+        ...... 
+        spatial_weights = spatial_weights.reshape(-1)
+
+        if len(pos_inds) > 0:
+            # SELA on bbox regression loss
+            if self.gamma is not None:
+                weight_targets = weight_targets * (spatial_weights[pos_inds] * self.gamma + 1)
+            loss_bbox = self.loss_bbox(
+                pos_decode_bbox_pred,
+                pos_decode_bbox_targets,
+                weight=weight_targets,
+                avg_factor=1.0)
+
+        # SELA on classification loss
+        if self.gamma is not None:
+            label_weights = label_weights[pos_inds] * (spatial_weights[pos_inds] * self.gamma + 1)
+
+        loss_cls =  self.loss_cls(
+            cls_score, (labels, score),
+            weight=label_weights,
+            avg_factor=num_total_samples)
+```
