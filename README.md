@@ -1,5 +1,24 @@
 <img src="flyleaf.png"/>
 
+#### This repo is based on [MMDetection v2.25.2](https://github.com/open-mmlab/mmdetection) 
+
+We provides the source code, evaluation protocols, and the tutorials of our paper.
+
+```
+@Inproceedings{zheng2023SELA,
+  title={Towards Spatial Equilibrium Object Detection},
+  author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Cheng, Ming-Ming},
+  booktitle={arxiv},
+  year={2023}
+}
+```
+
+### Installation
+
+Please refer to MMDetection [installation](https://github.com/open-mmlab/mmdetection/blob/master/docs/en/get_started.md/#Installation).
+
+#### The following is a detailed step-by-step tutorials.
+
 # Why does spatial equilibrium matter?
 
 ### The detector cannot perform uniformly across the zones.
