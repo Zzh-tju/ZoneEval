@@ -1,6 +1,6 @@
 <img src="flyleaf.png"/>
 
-#### This repo is based on [MMDetection v2.25.3](https://github.com/open-mmlab/mmdetection) 
+### This repo is based on [MMDetection v2.25.3](https://github.com/open-mmlab/mmdetection) 
 
 We provides the source code, evaluation protocols, and the tutorials of our paper.
 
@@ -13,7 +13,7 @@ We provides the source code, evaluation protocols, and the tutorials of our pape
 }
 ```
 
-### Installation
+## Installation
 
 ```
 conda create --name SELA python=3.8 -y
