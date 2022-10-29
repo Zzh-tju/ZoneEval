@@ -26,13 +26,15 @@ pip install mmcv-full==1.6.0 -f https://download.openmmlab.com/mmcv/dist/cu113/t
 
 git clone https://github.com/Zzh-tju/SELA.git
 
-cd SELA
-
-pip install -v -e .
-
-cd pycocotools
+cd SELA/pycocotools
 
 pip install -e .
+
+cd ..
+
+cd mmdetection
+
+pip install -v -e .
 ```
 
 #### The following is a detailed step-by-step tutorials.
