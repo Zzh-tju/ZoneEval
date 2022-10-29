@@ -64,11 +64,26 @@ model = dict(
 ```
 
 Currently, we provide evaluation for various object detectors, and the pretrained weight file can be downloaded from MMDetection or their official websites.
-  
-|[Faster R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/faster_rcnn)|[Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)|[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet)|[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos)|[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints)|
-|-------|-------|-------|-------|-------|
-|<div align="center">**[DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/detr)**</div>|<div align="center">**[Deformable DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/deformable_detr)**</div>|<div align="center">**[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn)**</div>|<div align="center">**[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl)**</div>|<div align="center">**[VFNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/vfnet)**</div>|
-|<div align="center">**[YOLOv5](https://github.com/ultralytics/yolov5)**|<div align="center">**[RetinaNet - Pyramid vision transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/pvt)**</div>|<div align="center">**[Mask R-CNN - Swin Transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/swin)**</div>|<div align="center">**[Mask R-CNN - ConvNeXt](https://github.com/open-mmlab/mmdetection/tree/master/configs/convnext)**</div>| |
+
+| Model | SP | ZP@ $z_0^5$ (AP) | Variance | ZP@ $z_0^1$ | ZP@ $z_1^2$ | ZP@ $z_2^3$ | ZP@ $z_3^4$ | ZP@ $z_4^5$ |
+|-------|-------|-------|-------|-------|-------|-------|-------|-------|
+|[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet)| 32.0 | 36.5 | 14.8 | 27.3 | 33.3 | 35.5 | 34.5 | 39.2 |
+|[Faster R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/faster_rcnn)| 33.1 | 37.4 | 11.8 | 29.3 | 34.2 | 36.1 | 35.0 | 39.9 |
+|[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos)| 34.2 | 38.7 | 14.7 | 29.5 | 35.3 | 38.0 | 36.7 | 41.1 |
+[Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)| 35.6 | 40.3 | 18.7 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
+|[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl)| 35.7 | 40.1 | 14.4 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
+|[DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/detr)| 35.3 | 40.1 | 26.9 | 29.8 | 36.2 | 39.8 | 39.1 | 45.7 |
+|[RetinaNet - Pyramid vision transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/pvt)| 35.5 | 40.4 | 19.7 | 30.8 | 36.9 | 39.0 | 37.4 | 44.6 |
+|[Cascade Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)| 41.2 | 46.1 | 21.1 | 36.1 | 42.0 | 44.8 | 45.9 | 49.9 |
+[Mask R-CNN - Swin Transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/swin)| 40.9 | 46.0 | 15.4 | 36.8 | 41.7 | 44.1 | 43.5 | 49.0 |
+|[Mask R-CNN - ConvNeXt](https://github.com/open-mmlab/mmdetection/tree/master/configs/convnext)| 41.1 | 46.2 | 17.6 | 46.7 | 41.9 | 44.5 | 43.6 | 49.7 |
+|[VFNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/vfnet)| 41.5 | 46.2 | 15.6 | 36.7 | 43.0 | 45.0 | 44.5 | 48.8 |
+|[Sparse R-CNN - ResNet-101](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | 41.7 | 46.2 | 21.1 | 36.9 | 42.9 | 44.9 | 44.7 | 51.3 |
+|[Deformable DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/deformable_detr)| 41.6 | 46.1 | 23.2 | 36.3 | 42.6 | 45.6 | 45.1 | 51.2|
+|[YOLOv5-m](https://github.com/ultralytics/yolov5)| 41.6 | 45.4 | 8.8 | 37.2 | 43.0 | 45.6 | 44.1 | 44.8 |
+
+[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints)|
+
   
 
 #### Note: if you test DETR series, you must modify the `simple_test()` function in `mmdet/models/detectors/single_stage.py`,
