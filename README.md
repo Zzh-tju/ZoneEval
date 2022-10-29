@@ -37,5 +37,5 @@ cd mmdetection
 pip install -v -e .
 ```
 
-#### Here is a detailed step-by-step [tutorials](https://github.com/Zzh-tju/SELA/blob/main/tutorial.md).
+### Here is a detailed step-by-step [tutorials](https://github.com/Zzh-tju/SELA/blob/main/tutorial.md).
 
