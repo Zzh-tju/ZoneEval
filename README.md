@@ -104,8 +104,7 @@ In this situation, an object can be well detected without being influenced by it
 
 ## Spatial Equilibrium Label Assignment (SELA)
 
-To persue spatial equilibrium object detection, a frequency-based approach is straightforward. As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
-
+As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
 We map the anchor point coordinate $(x^a, y^a)$ to a spatial weight $\alpha(x^a, y^a)$ by a spatial weighting function,
 
 <div align="center"> $\alpha(x,y) = 2\max\left\{||x-\frac{W}{2}||_1\frac{1}{W}, ||y-\frac{H}{2}||_1\frac{1}{H}\right\},$ </div>
@@ -119,6 +118,8 @@ Obviously, the spatial weight has the following properties:
 The usage of spatial weight is multi-optional. We now provide two implementations. One is frequency-based approach, and another is cost-sensitive learning approach.
 
 ### SELA (frequency-based)
+
+The frequency-based approach is straightforward. 
 
 We know that the fixed label assignment strategy, e.g., the max-IoU assigner, is popular for years.
 
