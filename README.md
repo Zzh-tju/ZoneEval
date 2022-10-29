@@ -1,6 +1,6 @@
 <img src="flyleaf.png"/>
 
-#### This repo is based on [MMDetection v2.25.2](https://github.com/open-mmlab/mmdetection) 
+#### This repo is based on [MMDetection v2.25.3](https://github.com/open-mmlab/mmdetection) 
 
 We provides the source code, evaluation protocols, and the tutorials of our paper.
 
@@ -15,7 +15,25 @@ We provides the source code, evaluation protocols, and the tutorials of our pape
 
 ### Installation
 
-Please refer to MMDetection [installation](https://github.com/open-mmlab/mmdetection/blob/master/docs/en/get_started.md/#Installation).
+```
+conda create --name SELA python=3.8 -y
+
+conda activate SELA
+
+conda install pytorch=1.12 cudatoolkit=11.3 torchvision=0.13.0 -c pytorch
+
+pip install mmcv-full==1.6.0 -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.12.0/index.html
+
+git clone https://github.com/Zzh-tju/SELA.git
+
+cd SELA
+
+pip install -v -e .
+
+cd pycocotools
+
+pip install -e .
+```
 
 #### The following is a detailed step-by-step tutorials.
 
