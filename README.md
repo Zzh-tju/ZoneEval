@@ -2,6 +2,8 @@
 
 ### This repo is based on [MMDetection v2.25.3](https://github.com/open-mmlab/mmdetection) 
 
+### Here is a detailed step-by-step [tutorial](https://github.com/Zzh-tju/SELA/blob/main/tutorial.md).
+
 We provides the source code, evaluation protocols, and the tutorials of our paper.
 
 ```
@@ -12,6 +14,7 @@ We provides the source code, evaluation protocols, and the tutorials of our pape
   year={2023}
 }
 ```
+
 
 ## Installation
 
@@ -37,5 +40,65 @@ cd mmdetection
 pip install -v -e .
 ```
 
-### Here is a detailed step-by-step [tutorials](https://github.com/Zzh-tju/SELA/blob/main/tutorial.md).
+## Evaluation
+
+### Turn on zone evaluation
+
+The relevant options can be specified on the config file,
+
+```
+model = dict(
+    test_cfg=dict(zone_measure=True))   # set to False and evaluate in the conventional way.
+```
+
+### Evaluation command
+
+```
+# for VOC and 3 application datasets
+
+./tools/dist_test.sh configs/sela/gfl_r18_fpn_1x_voc.py your_model.pth 2 --eval mAP
+
+# for MS COCO
+
+./tools/dist_test.sh configs/sela/gfl_r50_fpn_1x_coco.py your_model.pth 2 --eval bbox
+```
+
+Currently, we provide evaluation for various object detectors, and the pretrained weight file can be downloaded from MMDetection or their official websites.
+
+[Faster R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/faster_rcnn)
+
+[Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)
+
+[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet)
+
+[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos)
+
+[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints)
+
+[DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/detr)
+
+[Deformable DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/deformable_detr)
+
+[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn)
+
+[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl)
+
+[VFNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/vfnet)
+
+[YOLOv5](https://github.com/ultralytics/yolov5)
+
+[RetinaNet - Pyramid vision transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/pvt)
+
+[Mask R-CNN - Swin Transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/swin)
+
+[Mask R-CNN - ConvNeXt](https://github.com/open-mmlab/mmdetection/tree/master/configs/convnext)
+
+#### Note: if you test DETR series, you must modify the `simple_test()` function in `mmdet/models/detectors/single_stage.py`,
+
+```python
+        #outs = self.bbox_head(feat)
+        outs = self.bbox_head(feat, img_metas) # if you test DETR series
+```
+
+Currently, we do not support zone evaluation for instance segmentation models.
 
