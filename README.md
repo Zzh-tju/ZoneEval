@@ -65,11 +65,11 @@ model = dict(
 
 Currently, we provide evaluation for various object detectors, and the pretrained weight file can be downloaded from MMDetection or their official websites.
 
-<div align="center"><!-- 
+<div align="center">
 |[Faster R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/faster_rcnn)|[Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)|[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet)|[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos)|[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints)|
 |-------|-------|-------|-------|-------|
 |[DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/detr)|[Deformable DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/deformable_detr)|[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn)|[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl)|[VFNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/vfnet)|
-|[YOLOv5](https://github.com/ultralytics/yolov5)|[RetinaNet - Pyramid vision transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/pvt)|[Mask R-CNN - Swin Transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/swin)|[Mask R-CNN - ConvNeXt](https://github.com/open-mmlab/mmdetection/tree/master/configs/convnext)| |-->
+|[YOLOv5](https://github.com/ultralytics/yolov5)|[RetinaNet - Pyramid vision transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/pvt)|[Mask R-CNN - Swin Transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/swin)|[Mask R-CNN - ConvNeXt](https://github.com/open-mmlab/mmdetection/tree/master/configs/convnext)| |
 </div>
 
 #### Note: if you test DETR series, you must modify the `simple_test()` function in `mmdet/models/detectors/single_stage.py`,
