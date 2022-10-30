@@ -42,7 +42,7 @@ pip install -v -e .
 
 ## Datasets Preparation
 
-### Get The PASCAL VOC Data:
+### Get The PASCAL VOC Dataset:
 
 ```
 wget https://pjreddie.com/media/files/VOCtrainval_11-May-2012.tar
@@ -53,7 +53,48 @@ tar xf VOCtrainval_06-Nov-2007.tar
 tar xf VOCtest_06-Nov-2007.tar
 ```
 
-Put them in the following dir
+### Get The 3 Application Datasets:
+
+
+Download at Kaggle.
+
+[Face Mask](https://www.kaggle.com/datasets/parot99/face-mask-detection-yolo-darknet-format)
+
+[Fruit](https://www.kaggle.com/datasets/eunpyohong/fruit-object-detection)
+
+[Helmet](https://www.kaggle.com/datasets/vodan37/yolo-helmethead)
+
+The file dir follows the same settings to VOC-style.
+
+```
+cd data
+
+mkdir mask
+
+mkdir helmet
+
+mkdir fruit
+```
+
+#### Convert to XML format if the data label is YOLO format.
+
+Modify the file path to your datasets in `data/yolo2voc.py`, and run the command:
+
+```
+cd data
+
+mkdir mask
+
+python yolo2voc.py
+```
+
+### Get The MS COCO Dataset:
+
+```
+python tools/misc/download_dataset.py --dataset-name coco2017
+```
+
+Put all the above datasets in the following dir
 ```
 mmdetection
 ├── data
@@ -72,10 +113,27 @@ mmdetection
             ├──labels
             ├──SegmentationClass
             ├──SegmentationObject
+    ├── mask
+        ├── VOC2007
+            ├──Annotations
+            ├──ImageSets
+            ├──JPEGImages
+    ├── fruit
+        ├── VOC2007
+            ├──Annotations
+            ├──ImageSets
+            ├──JPEGImages
+    ├── helmet
+        ├── VOC2007
+            ├──Annotations
+            ├──ImageSets
+            ├──JPEGImages
+    ├── coco
+        ├── annotations
+        ├── train2017
+        ├── val2017
+        ├── test2017
 ```
-
-### Get The Face Mask Data:
-
 
 ## Evaluation
 
