@@ -58,19 +58,28 @@ mmdetection
 ├── data
     ├── VOCdevkit
         ├── VOC2007
-            ├──Annotations
-            ├──ImageSets
-            ├──JPEGImages
-            ├──labels
-            ├──SegmentationClass
-            ├──SegmentationObject
+            ├── Annotations
+                ├── 00001.xml
+                    00002.xml
+                    ......
+            ├── ImageSets
+                ├── Main
+                    ├── train.txt
+                        test.txt
+            ├── JPEGImages
+                ├── 00001.jpg
+                    00002.jpg
+                    ......
+            ├── labels
+            ├── SegmentationClass
+            ├── SegmentationObject
         ├── VOC2012
-            ├──Annotations
-            ├──ImageSets
-            ├──JPEGImages
-            ├──labels
-            ├──SegmentationClass
-            ├──SegmentationObject
+            ├── Annotations
+            ├── ImageSets
+            ├── JPEGImages
+            ├── labels
+            ├── SegmentationClass
+            ├── SegmentationObject
     ├── facemask
         ├── VOC2007
             ├──Annotations
@@ -88,8 +97,16 @@ mmdetection
             ├──JPEGImages
     ├── coco
         ├── annotations
+            ├── instances_train2017.json
+                instances_val2017.json
         ├── train2017
+            ├── 000000000009.jpg
+                000000000025.jpg
+                ......
         ├── val2017
+            ├── 000000000139.jpg
+                000000000285.jpg
+                ......
         ├── test2017
 ```
 
@@ -101,4 +118,4 @@ The breif information about the 5 datasets:
 | Face Mask | 5865 | 1035 | 2 |
 | Fruit | 3836 | 639 | 11 |
 | Helmet | 15887 | 6902 | 2 |
-| MS COCO | 118K | 5K | 80 |
+| MS COCO | 118291 | 5000 | 80 |
