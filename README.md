@@ -69,6 +69,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |----------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet)| 32.0 | 36.5 | 14.8 | 27.3 | 33.3 | 35.5 | 34.5 | 39.2 |
 |[Faster R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/faster_rcnn)| 33.1 | 37.4 | 11.8 | 29.3 | 34.2 | 36.1 | 35.0 | 39.9 |
+|[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints)| 33.5 | 38.1 | 12.9 | 29.2 | 34.7 | 36.7 | 35.6 | 40.3 |
 |[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos)| 34.2 | 38.7 | 14.7 | 29.5 | 35.3 | 38.0 | 36.7 | 41.1 |
 [Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)| 35.6 | 40.3 | 18.7 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
 |[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl)| 35.7 | 40.1 | 14.4 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
@@ -82,7 +83,6 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[Deformable DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/deformable_detr)| 41.6 | 46.1 | 23.2 | 36.3 | 42.6 | 45.6 | 45.1 | 51.2|
 |[YOLOv5-m](https://github.com/ultralytics/yolov5)| 41.6 | 45.4 | 8.8 | 37.2 | 43.0 | 45.6 | 44.1 | 44.8 |
 
-[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints)|
 
   
 
