@@ -1,5 +1,7 @@
 ### Get The PASCAL VOC Dataset:
 
+We use VOC 07+12 protocol, i.e., the train set contains VOC 2007 trainval + VOC 2012 trainval, and the test set contains VOC 2007 test.
+
 ```
 wget https://pjreddie.com/media/files/VOCtrainval_11-May-2012.tar
 wget https://pjreddie.com/media/files/VOCtrainval_06-Nov-2007.tar
@@ -41,6 +43,8 @@ The dowoloaded datasets may have some errors:
  - For helmet dataset, we use the union of valid set and test set for evaluation.
 
 ### Get The MS COCO Dataset:
+
+We use COCO train2017 for training and val2017 for evaluation.
 
 ```
 python tools/misc/download_dataset.py --dataset-name coco2017
