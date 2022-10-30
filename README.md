@@ -75,11 +75,7 @@ mkdir fruit
 Modify the file path to your datasets in `data/yolo2voc.py`, and run the command:
 
 ```
-cd data
-
-mkdir mask
-
-python yolo2voc.py
+python data/yolo2voc.py
 ```
 
 ### Get The MS COCO Dataset:
