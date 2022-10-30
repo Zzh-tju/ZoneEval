@@ -65,7 +65,7 @@ model = dict(
 
 Currently, we provide evaluation for various object detectors, and the pretrained weight file can be downloaded from MMDetection or their official websites.
 
-| Detector | Network | TS | SP | ZP@ $z_0^5$ (AP) | Variance | ZP@ $z_0^1$ | ZP@ $z_1^2$ | ZP@ $z_2^3$ | ZP@ $z_3^4$ | ZP@ $z_4^5$ |
+| Detector | Network | TS | SP | ZP@ $z_0^5$| Variance | ZP@ $z_0^1$ | ZP@ $z_1^2$ | ZP@ $z_2^3$ | ZP@ $z_3^4$ | ZP@ $z_4^5$ |
 |----------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet) | R50 | 1x | 32.0 | 36.5 | 14.8 | 27.3 | 33.3 | 35.5 | 34.5 | 39.2 |
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet) | R50 | 2x | 32.6 | 37.4 | 16.9 | 27.6 | 34.6 | 35.8 | 35.1 | 40.4 |
@@ -87,8 +87,9 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R101 | 3x | 41.7 | 46.2 | 21.1 | 36.9 | 42.9 | 44.9 | 44.7 | 51.3 |
 
 #### Note: 
- - 'Variance': the variance of the 5 ZPs (ZP@ $z_0^1$, ZP@ $z_1^2$, ..., ZP@ $z_4^5$).
  - 'TS': Training Schedule. 
+ - 'ZP@ $z_0^5$': the traditional AP.
+ - 'Variance': the variance of the 5 ZPs (ZP@ $z_0^1$, ZP@ $z_1^2$, ..., ZP@ $z_4^5$).
  - If you test DETR series, you must modify the `simple_test()` function in `mmdet/models/detectors/single_stage.py`,
 
 ```python
