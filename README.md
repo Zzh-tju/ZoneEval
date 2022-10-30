@@ -72,18 +72,17 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[YOLOF](https://github.com/open-mmlab/mmdetection/tree/master/configs/yolof)| 33.2 | 37.5 | 12.8 | 28.4 | 35.2 | 36.6 | 35.3 | 39.2 |
 |[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints)| 33.5 | 38.1 | 12.9 | 29.2 | 34.7 | 36.7 | 35.6 | 40.3 |
 |[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos)| 34.2 | 38.7 | 14.7 | 29.5 | 35.3 | 38.0 | 36.7 | 41.1 |
-[Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)| 35.6 | 40.3 | 18.7 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
-|[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl)| 35.7 | 40.1 | 14.4 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
 |[DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/detr)| 35.3 | 40.1 | 26.9 | 29.8 | 36.2 | 39.8 | 39.1 | 45.7 |
 |[RetinaNet - Pyramid vision transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/pvt)| 35.5 | 40.4 | 19.7 | 30.8 | 36.9 | 39.0 | 37.4 | 44.6 |
-|[Cascade Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)| 41.2 | 46.1 | 21.1 | 36.1 | 42.0 | 44.8 | 45.9 | 49.9 |
+[Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)| 35.6 | 40.3 | 18.7 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
+|[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl)| 35.7 | 40.1 | 14.4 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
 [Mask R-CNN - Swin Transformer](https://github.com/open-mmlab/mmdetection/tree/master/configs/swin)| 40.9 | 46.0 | 15.4 | 36.8 | 41.7 | 44.1 | 43.5 | 49.0 |
 |[Mask R-CNN - ConvNeXt](https://github.com/open-mmlab/mmdetection/tree/master/configs/convnext)| 41.1 | 46.2 | 17.6 | 46.7 | 41.9 | 44.5 | 43.6 | 49.7 |
+|[Cascade Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn)| 41.2 | 46.1 | 21.1 | 36.1 | 42.0 | 44.8 | 45.9 | 49.9 |
 |[VFNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/vfnet)| 41.5 | 46.2 | 15.6 | 36.7 | 43.0 | 45.0 | 44.5 | 48.8 |
-|[Sparse R-CNN - ResNet-101](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | 41.7 | 46.2 | 21.1 | 36.9 | 42.9 | 44.9 | 44.7 | 51.3 |
 |[Deformable DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/deformable_detr)| 41.6 | 46.1 | 23.2 | 36.3 | 42.6 | 45.6 | 45.1 | 51.2|
 |[YOLOv5-m](https://github.com/ultralytics/yolov5)| 41.6 | 45.4 | 8.8 | 37.2 | 43.0 | 45.6 | 44.1 | 44.8 |
-
+|[Sparse R-CNN - ResNet-101](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | 41.7 | 46.2 | 21.1 | 36.9 | 42.9 | 44.9 | 44.7 | 51.3 |
 
   
 
