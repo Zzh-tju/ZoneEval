@@ -73,6 +73,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[YOLOF](https://github.com/open-mmlab/mmdetection/tree/master/configs/yolof) | R50 | 1x | 33.2 | 37.5 | 12.8 | 28.4 | 35.2 | 36.6 | 35.3 | 39.2 |
 |[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints) | R50 | 1x | 33.5 | 38.1 | 12.9 | 29.2 | 34.7 | 36.7 | 35.6 | 40.3 |
 |[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos) | R50 | 1x | 34.2 | 38.7 | 14.7 | 29.5 | 35.3 | 38.0 | 36.7 | 41.1 |
+|[YOLOv5-s](https://github.com/ultralytics/yolov5) | | | 34.4 | 37.4 | 6.7 | 30.4 | 36.4 | 37.5 | 35.5 | 37.0 |
 |[DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/detr) | R50 | 150e | 35.3 | 40.1 | 26.9 | 29.8 | 36.2 | 39.8 | 39.1 | 45.7 |
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/pvt) | PVT-Small | 1x | 35.5 | 40.4 | 19.7 | 30.8 | 36.9 | 39.0 | 37.4 | 44.6 |
 [Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn) | R50 | 1x | 35.6 | 40.3 | 18.7 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
