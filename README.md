@@ -48,7 +48,7 @@ The relevant options can be specified on the config file,
 
 ```
 model = dict(
-    test_cfg=dict(zone_measure=True))   # set to False and evaluate in the conventional way.
+    test_cfg=dict(zone_eval=True))   # set to False and evaluate in the conventional way.
 ```
 
 ### Evaluation command
