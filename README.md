@@ -66,7 +66,7 @@ model = dict(
 Currently, we provide evaluation for various object detectors, and the pretrained weight file can be downloaded from MMDetection or their official websites.
 
 | Model | SP | ZP@ $z_0^5$ (AP) | Variance | ZP@ $z_0^1$ | ZP@ $z_1^2$ | ZP@ $z_2^3$ | ZP@ $z_3^4$ | ZP@ $z_4^5$ |
-|-------|-------|-------|-------|-------|-------|-------|-------|-------|
+|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet)| 32.0 | 36.5 | 14.8 | 27.3 | 33.3 | 35.5 | 34.5 | 39.2 |
 |[Faster R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/faster_rcnn)| 33.1 | 37.4 | 11.8 | 29.3 | 34.2 | 36.1 | 35.0 | 39.9 |
 |[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos)| 34.2 | 38.7 | 14.7 | 29.5 | 35.3 | 38.0 | 36.7 | 41.1 |
