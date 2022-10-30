@@ -70,8 +70,8 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet) | R50 | 1x | 32.0 | 36.5 | 14.8 | 27.3 | 33.3 | 35.5 | 34.5 | 39.2 |
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet) | R50 | 2x | 32.6 | 37.4 | 16.9 | 27.6 | 34.6 | 35.8 | 35.1 | 40.4 |
 |[Faster R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/faster_rcnn) | R50 | 1x | 33.1 | 37.4 | 11.8 | 29.3 | 34.2 | 36.1 | 35.0 | 39.9 |
-|[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R50 | 1x | 33.1 | 37.9 | 22.8 | 27.8 | 34.7 | 37.1 | 37.1 | 42.6 |
 |[YOLOF](https://github.com/open-mmlab/mmdetection/tree/master/configs/yolof) | R50 | 1x | 33.2 | 37.5 | 12.8 | 28.4 | 35.2 | 36.6 | 35.3 | 39.2 |
+|[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R50 | 1x | 33.3 | 37.9 | 22.8 | 27.8 | 34.7 | 37.1 | 37.1 | 42.6 |
 |[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints) | R50 | 1x | 33.5 | 38.1 | 12.9 | 29.2 | 34.7 | 36.7 | 35.6 | 40.3 |
 |[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos) | R50 | 1x | 34.2 | 38.7 | 14.7 | 29.5 | 35.3 | 38.0 | 36.7 | 41.1 |
 |[YOLOv5-s](https://github.com/ultralytics/yolov5) | | | 34.4 | 37.4 | 6.7 | 30.4 | 36.4 | 37.5 | 35.5 | 37.0 |
