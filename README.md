@@ -56,9 +56,7 @@ tar xf VOCtest_06-Nov-2007.tar
 ### Get The 3 Application Datasets:
 
 
-Download at Kaggle.
-
-[Face Mask](https://www.kaggle.com/datasets/parot99/face-mask-detection-yolo-darknet-format), [Fruit](https://www.kaggle.com/datasets/eunpyohong/fruit-object-detection), [Helmet](https://www.kaggle.com/datasets/vodan37/yolo-helmethead).
+Download at Kaggle: [Face Mask](https://www.kaggle.com/datasets/parot99/face-mask-detection-yolo-darknet-format), [Fruit](https://www.kaggle.com/datasets/eunpyohong/fruit-object-detection), [Helmet](https://www.kaggle.com/datasets/vodan37/yolo-helmethead).
 
 The file dir follows the same settings to VOC-style.
 
