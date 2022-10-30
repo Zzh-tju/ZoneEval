@@ -78,6 +78,12 @@ Modify the file path to your datasets in `data/yolo2voc.py`, and run the command
 python data/yolo2voc.py
 ```
 
+The dowoloaded datasets may have some errors:
+
+ - For face mask dataset, we use the union of train set and valid set for training.
+ - For fruit dataset, we found some images have errors. Please use our `train.txt and `test.txt` in `data/fruit/VOC2007/ImageSets/Main` to process the normal data.
+ - For helmet dataset, we use the union of valid set and test set for evaluation.
+
 ### Get The MS COCO Dataset:
 
 ```
@@ -124,6 +130,15 @@ mmdetection
         ├── val2017
         ├── test2017
 ```
+
+The breif information about the 5 datasets:
+
+| Dataset | Training set | Test set | #Classes |
+|----------|:--------:|:--------:|:--------:|
+| PASCAL VOC | 16551 | 4952 | 20 |
+| Face Mask | 5865 | 1035 | 2 |
+| Fruit | 3836 | 639 | 11 |
+| Helmet | 15887 | 6902 | 2 |
 
 ## Evaluation
 
