@@ -42,6 +42,7 @@ pip install -v -e .
 
 ## Datasets Preparation
 
+Please refer to [Datasets Preparation](https://github.com/Zzh-tju/SELA/blob/main/dataset_preparation.md).
 
 ## Evaluation
 
