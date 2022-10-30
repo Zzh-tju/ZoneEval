@@ -71,7 +71,7 @@ mmdetection
             ├──labels
             ├──SegmentationClass
             ├──SegmentationObject
-    ├── mask
+    ├── facemask
         ├── VOC2007
             ├──Annotations
             ├──ImageSets
