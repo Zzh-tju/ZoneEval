@@ -40,9 +40,9 @@ cd mmdetection
 pip install -v -e .
 ```
 
-## Datasets Preparation
+## Dataset Preparations
 
-Please refer to [Datasets Preparation](https://github.com/Zzh-tju/SELA/blob/main/dataset_preparation.md) for preparing PASCAL VOC 07+12, Face Mask, Fruit, Helmet, and MS COCO datasets.
+Please refer to [Dataset Preparations](https://github.com/Zzh-tju/SELA/blob/main/dataset_preparation.md) for preparing PASCAL VOC 07+12, Face Mask, Fruit, Helmet, and MS COCO datasets.
 
 ## Evaluation
 
