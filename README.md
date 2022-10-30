@@ -87,7 +87,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R101 | 3x | 41.7 | 46.2 | 21.1 | 36.9 | 42.9 | 44.9 | 44.7 | 51.3 |
 
 #### Note: 
- - 'Variance' denotes the variance of ZP@ $z_0^1$, ZP@ $z_1^2$, ..., ZP@ $z_4^5$.
+ - 'Variance' denotes the variance of the 5 ZPs (ZP@ $z_0^1$, ZP@ $z_1^2$, ..., ZP@$z_4^5$).
  - If you test DETR series, you must modify the `simple_test()` function in `mmdet/models/detectors/single_stage.py`,
 
 ```python
