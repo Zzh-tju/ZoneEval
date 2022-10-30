@@ -95,3 +95,4 @@ The breif information about the 5 datasets:
 | Face Mask | 5865 | 1035 | 2 |
 | Fruit | 3836 | 639 | 11 |
 | Helmet | 15887 | 6902 | 2 |
+| MS COCO | 118K | 5K | 80 |
