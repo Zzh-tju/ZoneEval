@@ -66,7 +66,7 @@ In this situation, an object can be well detected without being influenced by it
 As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
 We map the anchor point coordinate $(x^a, y^a)$ to a spatial weight $\alpha(x^a, y^a)$ by a spatial weighting function,
 
-$$\alpha(x,y) = 2max \{||x-\frac{W}{2}||_1\frac{1}{W}, ||y-\frac{H}{2}||_1\frac{1}{H}\},$$
+$$\alpha(x,y) = 2\max\left\lbrace||x-\frac{W}{2}||_1\frac{1}{W}, ||y-\frac{H}{2}||_1\frac{1}{H}\right\rbrace,$$
 
 <div align="center"><img src="spatial-weight.png" width="300"/></div>
 
