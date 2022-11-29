@@ -55,7 +55,7 @@ As $n$ increases, the requirements for spatial equilibrium become stricter and s
 As the detection performance varies across the zones, we further introduce an additional metric to gauge the discrete amplitude among the zone metrics.
 Given all the ZPs, we calculate the variance of ZPs,
 
-<div align="center"><$\sigma(\mathrm{ZP}) = \sum\limits_{i=0}^{n-1}(\mathrm{ZP}\text{@}z_i^{i+1}-\bar{\mathrm{ZP}})^2/n,$/></div>
+<div align="center">$\sigma(\mathrm{ZP}) = \sum\limits_{i=0}^{n-1}(\mathrm{ZP}\text{@}z_i^{i+1}-\bar{\mathrm{ZP}})^2/n,$</div>
 
 where $\bar{\mathrm{ZP}}$ is the mean value of ZPs.
 Ideally, if $\sigma(\mathrm{ZP})=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
