@@ -39,11 +39,11 @@ For implementation, please refer to [Zone evaluation](implementation.md).
 
 Now that we have 5 ZPs, and they indeed provide more information about the detector's performance. We further present a **S**patial equilibrium **P**recision (SP), and we use this single value to characterize the detection performance for convenient usage.
 
-<div align="center"> $\mathrm{SP}=\sum\limits_{i=0}^{n-1}\mathrm{Area}(z_i^{i+1})\mathrm{ZP}\text{@}z_i^{i+1}$ </div>
+$$\mathrm{SP}=\sum\limits_{i=0}^{n-1}\mathrm{Area}(z_i^{i+1})\mathrm{ZP}\text{@}z_i^{i+1}$$
 
 where $\mathrm{Area}(z_i^{i+1})$ calculates the area of the zone $z_i^{i+1}$ in the normalized image space (square image with unit area 1). In general, SP is a weighted sum of the 5 ZPs, that is,
  
-<div align="center"> $\mathrm{SP}=0.36\mathrm{ZP}\text{@}z_0^1+0.28\mathrm{ZP}\text{@}z_1^2+0.20\mathrm{ZP}\text{@}z_2^3+0.12\mathrm{ZP}\text{@}z_3^4+0.04\mathrm{ZP}\text{@}z_4^5$ </div>
+$$\mathrm{SP}=0.36\mathrm{ZP}\text{@}z_0^1+0.28\mathrm{ZP}\text{@}z_1^2+0.20\mathrm{ZP}\text{@}z_2^3+0.12\mathrm{ZP}\text{@}z_3^4+0.04\mathrm{ZP}\text{@}z_4^5$$
 
 Our SP is based on the assumption similar to the traditional AP, i.e., the detector performs uniformly in the zone.
 The difference is, our SP applies this assumption to a series of smaller zones, rather than the full map for traditional AP.
@@ -55,7 +55,7 @@ As $n$ increases, the requirements for spatial equilibrium become stricter and s
 As the detection performance varies across the zones, we further introduce an additional metric to gauge the discrete amplitude among the zone metrics.
 Given all the ZPs, we calculate the variance of ZPs,
 
-<div align="center">$\sigma(\mathrm{ZP}) = \sum\limits_{i=0}^{n-1}(\mathrm{ZP}\text{@}z_i^{i+1}-\bar{\mathrm{ZP}})^2/n,$</div>
+$$\sigma(\mathrm{ZP}) = \sum\limits_{i=0}^{n-1}(\mathrm{ZP}\text{@}z_i^{i+1}-\bar{\mathrm{ZP}})^2/n,$$
 
 where $\bar{\mathrm{ZP}}$ is the mean value of ZPs.
 Ideally, if $\sigma(\mathrm{ZP})=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
@@ -66,7 +66,7 @@ In this situation, an object can be well detected without being influenced by it
 As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
 We map the anchor point coordinate $(x^a, y^a)$ to a spatial weight $\alpha(x^a, y^a)$ by a spatial weighting function,
 
-<div align="center"> $\alpha(x,y) = 2\max\left\{||x-\frac{W}{2}||_1\frac{1}{W}, ||y-\frac{H}{2}||_1\frac{1}{H}\right\},$ </div>
+$$\alpha(x,y) = 2\max\left\{||x-\frac{W}{2}||_1\frac{1}{W}, ||y-\frac{H}{2}||_1\frac{1}{H}\right\},$$
 
 <div align="center"><img src="spatial-weight.png" width="300"/></div>
 
@@ -82,7 +82,7 @@ The frequency-based approach is straightforward.
 We know that the fixed label assignment strategy, e.g., the max-IoU assigner, is popular for years.
 Given the positive IoU threshold $t$, the max-IoU assigner determines the positive samples by,
 
-<div align="center"> $\textrm{IoU}(B^{a},B^{gt})\geqslant t,$ </div>
+$$\textrm{IoU}(B^{a},B^{gt})\geqslant t,$$
 
 where $B^{a}$ and $B^{gt}$ denote the preset anchor boxes and the ground-truth boxes.
 In RetinaNet and RPN, $t=0.5$ is a constant.
@@ -90,7 +90,7 @@ In [ATSS](https://arxiv.org/abs/1912.02424), the assignment follows the same rul
 
 Our SELA is simple that we just need to take one more factor into account, i.e., the spatial weight.
 
-<div align="center"> $\textrm{IoU}(B^a,B^{gt})\geqslant t-\gamma\alpha(x^{a},y^{a}),$ </div>
+$$\textrm{IoU}(B^a,B^{gt})\geqslant t-\gamma\alpha(x^{a},y^{a}),$$
 
 where $\gamma\geqslant 0$ is a hyper-parameter.
 Now you see SELA relaxes the positive sample selection conditions for objects in the boundary zone.
@@ -102,7 +102,7 @@ We exploit the spatial weight to enlarge the loss weight for positive samples.
 Let $\mathcal{L}$ be the loss function of a given positive anchor point $(x^a, y^a)$.
 It calculates the classification loss and bbox regression loss.
 Now we just need to re-weight this term by
-<div align="center"> $\mathcal{L}=\mathcal{L}*(1+\gamma\alpha(x^{a},y^{a}))$ </div>
+$$\mathcal{L}=\mathcal{L}*(1+\gamma\alpha(x^{a},y^{a}))$$
 
 The above two methods relieve the network from paying too much attention to the central objects. The following table is reported by VOC 07+12 protocol.
 
