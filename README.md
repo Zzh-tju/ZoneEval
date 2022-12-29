@@ -69,7 +69,7 @@ model = dict(
 
 Currently, we provide evaluation for various object detectors, and the pretrained weight file can be downloaded from MMDetection or their official websites.
 
-| Detector | Network | TS | SP | $ZP^{0,5}$| Variance | $ZP^{0,1}$ | $ZP^{1,2}$ | $ZP^{2,3}$ | $ZP^{3,4}$ | $ZP^{4,5}$ |
+| Detector | Network | TS | SP | $\text{ZP}^{0,5}$| Variance | $ZP^{0,1}$ | $ZP^{1,2}$ | $ZP^{2,3}$ | $ZP^{3,4}$ | $ZP^{4,5}$ |
 |----------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet) | R50 | 1x | 32.0 | 36.5 | 14.8 | 27.3 | 33.3 | 35.5 | 34.5 | 39.2 |
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet) | R50 | 2x | 32.6 | 37.4 | 16.9 | 27.6 | 34.6 | 35.8 | 35.1 | 40.4 |
