@@ -16,6 +16,8 @@ If you have a fire dataset like this, the detector will be good at detecting fir
 
 ## Zone Evaluation
 
+In order to capture the spatial bias, we need to quantify the detection performance in a specific zone of the image, rather than the full map.
+
 ### Zone Precision
 
 Let’s start by the definition of evaluation zones. We define a rectangle region $R_i=\text{Rectangle}(p,q)=\text{Rectangle}((r_iW,r_iH),((1-r_i)W,(1-r_i)H))$ like this, 
