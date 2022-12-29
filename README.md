@@ -4,7 +4,7 @@
 
 ### Here is a detailed step-by-step [tutorial](https://github.com/Zzh-tju/SELA/blob/main/tutorial.md).
 
-We provides the source code, evaluation protocols, and the tutorials of our paper.
+This is the source codes of our paper.
 
 ```
 @Inproceedings{zheng2023SELA,
