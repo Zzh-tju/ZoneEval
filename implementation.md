@@ -244,7 +244,7 @@ where we set all the ground-truth boxes whose centers are outside the zone to be
 
 ## Implementation of SELA
 
-### SELA (frequency-based)
+### SELA (frequency-based approach)
 
 1. `configs/sela/gfl_sela_r18_fpn_1x_voc.py`
 
