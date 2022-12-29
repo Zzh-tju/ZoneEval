@@ -45,11 +45,11 @@ $$\mathrm{SP}=\sum\limits_{i=0}^{n-1}\mathrm{Area}(z^{i,i+1})\mathrm{ZP}^{i,i+1}
 
 where $\mathrm{Area}(z^{i,i+1})$ calculates the area of the zone $z_i^{i+1}$ in the normalized image space (square image with unit area 1). In general, SP is a weighted sum of the 5 ZPs, that is,
  
-$$\mathrm{SP}=0.36\mathrm{ZP}\text{@}z_0^1+0.28\mathrm{ZP}\text{@}z_1^2+0.20\mathrm{ZP}\text{@}z_2^3+0.12\mathrm{ZP}\text{@}z_3^4+0.04\mathrm{ZP}\text{@}z_4^5$$
+$$\mathrm{SP}=0.36\mathrm{ZP}^{0,1}+0.28\mathrm{ZP}^{1,2}+0.20\mathrm{ZP}^{2,3}+0.12\mathrm{ZP}^{3,4}+0.04\mathrm{ZP}^{4,5}$$
 
 Our SP is based on the assumption similar to the traditional AP, i.e., the detector performs uniformly in the zone.
 The difference is, our SP applies this assumption to a series of smaller zones, rather than the full map for traditional AP.
-One can see that when $n=1$, our SP is identical to traditional AP as the term $\mathrm{Area}(z_i^j)=1$, which means that the detectors are assumed to perform uniformly in the whole image zone.
+One can see that when $n=1$, our SP is identical to traditional AP as the term $\mathrm{Area}(z^{0,n})=1$, which means that the detectors are assumed to perform uniformly in the whole image zone.
 As $n$ increases, the requirements for spatial equilibrium become stricter and stricter. And a large $n>5$ is also acceptable if a more rigorous spatial equilibrium is required.
 
 ### Variance of ZPs
@@ -57,7 +57,7 @@ As $n$ increases, the requirements for spatial equilibrium become stricter and s
 As the detection performance varies across the zones, we further introduce an additional metric to gauge the discrete amplitude among the zone metrics.
 Given all the ZPs, we calculate the variance of ZPs,
 
-$$\sigma(\mathrm{ZP}) = \sum\limits_{i=0}^{n-1}(\mathrm{ZP}\text{@}z_i^{i+1}-\bar{\mathrm{ZP}})^2/n,$$
+$$\sigma(\mathrm{ZP}) = \sum\limits_{i=0}^{n-1}(\mathrm{ZP}^{i,i+1}-\bar{\mathrm{ZP}})^2/n,$$
 
 where $\bar{\mathrm{ZP}}$ is the mean value of ZPs.
 Ideally, if $\sigma(\mathrm{ZP})=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
