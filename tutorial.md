@@ -23,7 +23,7 @@ In order to capture the spatial bias, we need to quantify the detection performa
 Let’s start by the definition of evaluation zones. We define a rectangle region $R_i=\text{Rectangle}(p,q)=\text{Rectangle}((r_iW,r_iH),((1-r_i)W,(1-r_i)H))$ like this, 
 <div align="center"><img src="rectangle.png" width="300"/></div>
 
-where $i\in$ { $0,1,\cdots,n$ }, $n$ is the number of zones.
+where $r_i=i/2n$, $i\in$ { $0,1,\cdots,n$ }, $n$ is the number of zones.
 
 Then, the evaluation zones are disigned to be a series of annular zone $z_i^j=R_i\setminus R_j$, $i\textless j$.
 We denote the range of the annular zone $z_i^j$ as $(r_i,r_j)$ for brevity.
