@@ -108,7 +108,7 @@ $$\mathcal{L}=\mathcal{L}*(1+\gamma\alpha(x^{a},y^{a}))$$
 
 The above two methods relieve the network from paying too much attention to the central objects. The following table is reported by VOC 07+12 protocol.
 
-| Method | $\gamma$ | ZP@ $z_0^5$ | ZP@ $z_0^1$ | ZP@ $z_1^2$ |  ZP@ $z_2^3$ |  ZP@ $z_3^4$ |  ZP@ $z_4^5$ | Variance | SP |
+| Method | $\gamma$ | $\text{ZP}^{0,5}$ | $\text{ZP}^{0,1}$ | $\text{ZP}^{1,2}$ |  $\text{ZP}^{2,3}$ |  $\text{ZP}^{3,4}$ |  $\text{ZP}^{4,5}$ | Variance | SP |
 |--------|----------|-------------|-------------|-------------|--------------|--------------|--------------|----------|----|
 | GFocal |0    | 51.9 | 31.5 | 37.7 | 40.1 | 43.4 | 52.8 | 49.4 | 37.2 |
 | SELA (frequency-based)|0.2  | 52.5 | 33.9 | 38.6 | 41.5 | 43.3 | 52.5 | 37.9 | 38.6 |
