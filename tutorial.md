@@ -25,13 +25,13 @@ Let’s start by the definition of evaluation zones. We define a rectangle regio
 
 where $r_i=i/2n$, $i\in$ { $0,1,\cdots,n$ }, $n$ is the number of zones.
 
-Then, the evaluation zones are designed to be a series of annular zone $z_i^j=R_i\setminus R_j$, $i\textless j$.
-We denote the range of the annular zone $z_i^j$ as $(r_i,r_j)$ for brevity.
+Then, the evaluation zones are designed to be a series of annular zone $z^{i,j}=R_i\setminus R_j$, $i\textless j$.
+We denote the range of the annular zone $z^{i,j}$ as $(r_i,r_j)$ for brevity.
 
 <div align="center"><img src="zone-range.gif" width="300"/></div>
 
-We measure the detection performance for a specific zone $z_i^j$ by only considering the ground-truth objects and the detections whose centers lie in the zone $z_i^j$.
-Then, for an arbitrary evaluation metric, for instance Average Precision (AP), the evaluation process stays the same to the conventional ways, yielding Zone Precision (ZP), denoted by ZP@ $z_i^j$. Consider the default setting $n=5$, the evaluation zones look like this,
+We measure the detection performance for a specific zone $z^{i,j}$ by only considering the ground-truth objects and the detections whose centers lie in the zone $z^{i,j}$.
+Then, for an arbitrary evaluation metric, for instance Average Precision (AP), the evaluation process stays the same to the conventional ways, yielding Zone Precision (ZP), denoted by $\text{ZP}^{i,j}$. Consider the default setting $n=5$, the evaluation zones look like this,
 
 <div align="center"><img src="eval-zone.png" width="300"/></div>
 
@@ -41,9 +41,9 @@ For implementation, please refer to [Zone evaluation](implementation.md).
 
 Now that we have 5 ZPs, and they indeed provide more information about the detector's performance. We further present a **S**patial equilibrium **P**recision (SP), and we use this single value to characterize the detection performance for convenient usage.
 
-$$\mathrm{SP}=\sum\limits_{i=0}^{n-1}\mathrm{Area}(z_i^{i+1})\mathrm{ZP}\text{@}z_i^{i+1}$$
+$$\mathrm{SP}=\sum\limits_{i=0}^{n-1}\mathrm{Area}(z^{i,i+1})\mathrm{ZP}^{i,i+1}$$
 
-where $\mathrm{Area}(z_i^{i+1})$ calculates the area of the zone $z_i^{i+1}$ in the normalized image space (square image with unit area 1). In general, SP is a weighted sum of the 5 ZPs, that is,
+where $\mathrm{Area}(z^{i,i+1})$ calculates the area of the zone $z_i^{i+1}$ in the normalized image space (square image with unit area 1). In general, SP is a weighted sum of the 5 ZPs, that is,
  
 $$\mathrm{SP}=0.36\mathrm{ZP}\text{@}z_0^1+0.28\mathrm{ZP}\text{@}z_1^2+0.20\mathrm{ZP}\text{@}z_2^3+0.12\mathrm{ZP}\text{@}z_3^4+0.04\mathrm{ZP}\text{@}z_4^5$$
 
