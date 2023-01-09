@@ -290,7 +290,7 @@ model = dict(
             spatial_weight = 2*torch.max(torch.abs(gt_cx - 0.5*img_w)/img_w, torch.abs(gt_cy - 0.5*img_h)/img_h)
             is_pos = candidate_overlaps >= overlaps_thr_per_gt[None, :] - self.gamma * spatial_weight    # SELA
         else:
-            is_pos = candidate_overlaps >=  overlaps_thr_per_gt[None, :]    # ATSS
+            is_pos = candidate_overlaps >= overlaps_thr_per_gt[None, :]    # ATSS
         ......
 ```
 
