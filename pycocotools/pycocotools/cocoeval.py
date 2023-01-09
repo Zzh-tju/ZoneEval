@@ -545,7 +545,7 @@ class COCO_zone_eval:
     # Data, paper, and tutorials available at:  http://mscoco.org/
     # Code written by Piotr Dollar and Tsung-Yi Lin, 2015.
     # Licensed under the Simplified BSD License [see coco/license.txt]
-    def __init__(self, cocoGt=None, cocoDt=None, iouType='segm', data=None, imgs=None, ri=0.0, rj=0.5):
+    def __init__(self, cocoGt=None, cocoDt=None, iouType='segm', imgs=None, radius1=0.0, radius2=0.5):
         '''
         Initialize CocoEval using coco APIs for gt and dt
         :param cocoGt: coco object with ground truth annotations
@@ -564,10 +564,9 @@ class COCO_zone_eval:
         self._paramsEval = {}               # parameters for evaluation
         self.stats = []                     # result summarization
         self.ious = {}                      # ious between all gts and dts
-        self.data = data
         self.imgs = imgs
-        self.ri = ri 
-        self.rj= rj
+        self.radius1 = radius1 
+        self.radius2= radius2
         if not cocoGt is None:
             self.params.imgIds = sorted(cocoGt.getImgIds())
             self.params.catIds = sorted(cocoGt.getCatIds())
@@ -601,8 +600,8 @@ class COCO_zone_eval:
             img_h = self.imgs[gt['image_id']]['height']
             center_x = gt['bbox'][0] + 0.5 * gt['bbox'][2]
             center_y = gt['bbox'][1] + 0.5 * gt['bbox'][3]
-            ind0 = (center_x <= self.ri*img_w) | ( center_x >= (1-self.ri)*img_w) | ( center_y <= self.ri*img_h) | ( center_y >= (1-self.ri)*img_h)
-            ind1 = (center_x > self.rj*img_w) & ( center_x < (1-self.rj)*img_w) & ( center_y > self.rj*img_h) & ( center_y < (1-self.rj)*img_h)
+            ind0 = (center_x <= self.radius1*img_w) | ( center_x >= (1-self.radius1)*img_w) | ( center_y <= self.radius1*img_h) | ( center_y >= (1-self.radius1)*img_h)
+            ind1 = (center_x > self.radius2*img_w) & ( center_x < (1-self.radius2)*img_w) & ( center_y > self.radius2*img_h) & ( center_y < (1-self.radius2)*img_h)
             ind2 = ind0 | ind1
             gt['ignore'] = gt['ignore'] if 'ignore' in gt else 0
             gt['ignore'] = 'iscrowd' in gt and gt['iscrowd']
@@ -735,7 +734,7 @@ class COCO_zone_eval:
                 ious[i, j] = np.sum(np.exp(-e)) / e.shape[0]
         return ious
 
-    def evaluateImg(self, imgId, catId, aRng, maxDet):
+    def evaluateImg(self, imgId, catId, aRng, maxDet, n):
         '''
         perform evaluation for single category and image
         :return: dict (single image results)
@@ -750,7 +749,17 @@ class COCO_zone_eval:
         if len(gt) == 0 and len(dt) ==0:
             return None
 
+        #img_w = self.data[n]['width']
+        #img_h = self.data[n]['height']
+
         for g in gt:
+            #center_x = g['bbox'][0] + 0.5 * g['bbox'][2]
+            #center_y = g['bbox'][1] + 0.5 * g['bbox'][3]
+
+            #ind0 = (center_x <= self.radius1*img_w) | ( center_x >= (1-self.radius1)*img_w) | ( center_y <= self.radius1*img_h) | ( center_y >= (1-self.radius1)*img_h)
+            #ind1 = (center_x > self.radius2*img_w) & ( center_x < (1-self.radius2)*img_w) & ( center_y > self.radius2*img_h) & ( center_y < (1-self.radius2)*img_h)
+            #ind2 = ind0 | ind1
+            #if g['ignore'] or (g['area']<aRng[0] or g['area']>aRng[1]) or ind2 ==True:
             if g['ignore'] or (g['area']<aRng[0] or g['area']>aRng[1]):
                 g['_ignore'] = 1
             else:
