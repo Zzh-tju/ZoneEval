@@ -197,7 +197,7 @@ class ATSSAssigner(BaseAssigner):
             spatial_weight = 2*torch.max(torch.abs(gt_cx - 0.5*img_w)/img_w, torch.abs(gt_cy - 0.5*img_h)/img_h)
             is_pos = candidate_overlaps >= overlaps_thr_per_gt[None, :] - self.gamma * spatial_weight
         else:
-            is_pos = candidate_overlaps >=  overlaps_thr_per_gt[None, :]
+            is_pos = candidate_overlaps >= overlaps_thr_per_gt[None, :]
 
         # limit the positive sample's center in gt
         for gt_idx in range(num_gt):
