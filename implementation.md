@@ -242,6 +242,8 @@ class COCO_zone_eval:
 ```
 where we set all the ground-truth boxes whose centers are outside the zone to be 'ignored'.
 
+Of course, we pack up `pycocotools` in our repository.
+
 ## Implementation of SELA
 
 ### SELA (frequency-based approach)
