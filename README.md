@@ -94,7 +94,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 #### Note: 
  - 'TS': Training Schedule. 
  - ' $\text{ZP}^{0,5}$ ': the traditional AP.
- - 'Variance': the variance of the 5 ZPs ( $\text{ZP}^{0,1}$, $\text{ZP}^{1,2}$, ..., $\text{ZP}^{4,5}$).
+ - 'Variance': the variance of the 5 ZPs ( $\text{ZP}^{0,1}$, $\text{ZP}^{1,2}$, ..., $\text{ZP}^{4,5}$ ).
  - If you test DETR series, you must modify the `simple_test()` function in `mmdet/models/detectors/single_stage.py`,
 
 ```python
