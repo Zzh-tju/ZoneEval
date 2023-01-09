@@ -60,11 +60,11 @@ model = dict(
 ```
 # for VOC and 3 application datasets
 
-./tools/dist_test.sh configs/sela/gfl_r18_fpn_1x_voc.py your_model.pth 2 --eval mAP
+./tools/dist_test.sh configs/sela/your_config_file.py your_model.pth 2 --eval mAP
 
 # for MS COCO
 
-./tools/dist_test.sh configs/sela/gfl_r50_fpn_1x_coco.py your_model.pth 2 --eval bbox
+./tools/dist_test.sh configs/sela/your_config_file.py your_model.pth 2 --eval bbox
 ```
 
 Currently, we provide evaluation for various object detectors, and the pretrained weight file can be downloaded from MMDetection or their official websites.
