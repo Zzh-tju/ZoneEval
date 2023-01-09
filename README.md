@@ -7,10 +7,10 @@
 This is the source codes of our paper.
 
 ```
-@Inproceedings{zheng2023SELA,
+@article{zheng2023SELA,
   title={Towards Spatial Equilibrium Object Detection},
   author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Cheng, Ming-Ming},
-  booktitle={arxiv},
+  journal={arxiv},
   year={2023}
 }
 ```
