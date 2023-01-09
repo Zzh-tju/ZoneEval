@@ -1,5 +1,3 @@
-__author__ = 'tsungyi'
-
 import numpy as np
 import datetime
 import time
