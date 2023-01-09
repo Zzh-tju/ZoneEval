@@ -310,7 +310,7 @@ model = dict(
         ......
         spatial_weights = anchors.new_ones(num_valid_anchors, dtype=torch.float)
         xywh_anchors = bbox_xyxy_to_cxcywh(anchors)
-        if self.cost_sensitive_learning = True:
+        if self.gamma is not None:
             spatial_weights = 2*torch.max(torch.abs(xywh_anchors[:,0] - 0.5*img_w)/img_w, torch.abs(xywh_anchors[:,1] - 0.5*img_h)/img_h)
 ```
 
