@@ -186,10 +186,7 @@ class DistEvalHook(BaseDistEvalHook):
                     print('z45: ', np.around(ZP[4,:], 1))
                     print('SP50, SP55, SP60, SP65, SP70, SP75, SP80, SP85, SP90, SP95, SP')
                     SP = 0.36 * ZP[0,:] + 0.28 * ZP[1,:] + 0.2 * ZP[2,:] + 0.12 * ZP[3,:] + 0.04 * ZP[4,:]
-                    SP_reverse = 0.04 * ZP[0,:] + 0.12 * ZP[1,:] + 0.2 * ZP[2,:] + 0.28 * ZP[3,:] + 0.36 * ZP[4,:]
                     print(np.around(SP, 1))
-                    print('reverse SP')
-                    print(np.around(SP_reverse, 1))
 
                     #print('Zone:, ZR50, ZR55, ZR60, ZR65, ZR70, ZR75, ZR80, ZR85, ZR90, ZR95, ZR')
                     #print('z05: ', np.around(mar, 1))
@@ -230,11 +227,8 @@ class DistEvalHook(BaseDistEvalHook):
                     print('z34: ', np.around(ZP[3,:], 1))
                     print('z45: ', np.around(ZP[4,:], 1))
                     SP = 0.36 * ZP[0,:] + 0.28 * ZP[1,:] + 0.2 * ZP[2,:] + 0.12 * ZP[3,:] + 0.04 * ZP[4,:]
-                    SP_reverse = 0.04 * ZP[0,:] + 0.12 * ZP[1,:] + 0.2 * ZP[2,:] + 0.28 * ZP[3,:] + 0.36 * ZP[4,:]
                     print('SP, SP50, SP75, SPs, SPm, SPl, SR100')
                     print(np.around(SP, 1))
-                    print('reverse SP')
-                    print(np.around(SP_reverse, 1))
 
             # the key_score may be `None` so it needs to skip
             # the action to save the best checkpoint
