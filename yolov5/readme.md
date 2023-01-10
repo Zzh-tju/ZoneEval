@@ -2,7 +2,7 @@
 
 Download YOLOv5 from https://github.com/ultralytics/yolov5 and install the dependencies.
 
-Make sure you have compiled our pycocotools.
+Make sure you have compiled our [pycocotools](https://github.com/Zzh-tju/SELA#installation).
 
 Download the pretrained weight file, e.g., YOLOv5-s, from the official website.
 
