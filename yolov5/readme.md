@@ -14,7 +14,7 @@ Then run,
  python zone-val.py --data coco.yaml --img 640  --weight yolov5s.pt --device 0,1
 ```
 
-And you will see the zone evaluation results:
+And you will see the zone evaluation results (YOLOv5-s):
 
 ```python
 Zone:, ZP, ZP50, ZP75, ZPs, ZPm, ZPl, ZR1, ZR10, ZR100, ZRs, ZRm, ZRl
