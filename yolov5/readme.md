@@ -1,6 +1,6 @@
 ### Zone Evaluation on YOLOv5
 
-Download YOLOv5 from https://github.com/ultralytics/yolov5 and install the dependencies.
+Download YOLOv5 from https://github.com/ultralytics/yolov5 and install the dependencies. **We use YOLOv5-v7.0.**
 
 Make sure you have compiled our [pycocotools](https://github.com/Zzh-tju/SELA#installation).
 
