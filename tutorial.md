@@ -95,7 +95,7 @@ Our SELA is simple that we just need to take one more factor into account, i.e.,
 $$\textrm{IoU}(B^a,B^{gt})\geqslant t-\gamma\alpha(x^{a},y^{a}),$$
 
 where $\gamma\geqslant 0$ is a hyper-parameter.
-Now you see SELA relaxes the positive sample selection conditions for objects in the boundary zone.
+Now you see SELA relaxes the positive sample selection conditions for objects in the border zone.
 Therefore, more anchor points will be selected as the positive samples for them.
 
 ### SELA (cost-sensitive learning)
