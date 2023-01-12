@@ -83,6 +83,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/pvt) | PVT-Small | 1x | 35.5 | 40.4 | 19.7 | 30.8 | 36.9 | 39.0 | 37.4 | 44.6 |
 [Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn) | R50 | 1x | 35.6 | 40.3 | 18.7 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
 |[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl) | R50 | 1x | 35.7 | 40.1 | 14.4 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 |
+|[Cascade Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn) | R-101-FPN | 3x | 40.3 | 45.4 | 22.4 | 34.7 | 41.6 | 44.3 | 44.4 | 49.1 |
 |[YOLOv5-m](https://github.com/ultralytics/yolov5) | | | 40.8 | 45.2 | 12.9 | 36.0 | 42.3 | 44.5 | 43.2 | 46.7 |
 [Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/swin) | Swin-T | 3x | 40.9 | 46.0 | 15.4 | 36.8 | 41.7 | 44.1 | 43.5 | 49.0 |
 |[Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/convnext) | ConvNeXt-T | 3x | 41.1 | 46.2 | 17.6 | 46.7 | 41.9 | 44.5 | 43.6 | 49.7 |
