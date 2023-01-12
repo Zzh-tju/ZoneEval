@@ -1,4 +1,4 @@
-<img src="flyleaf.png"/>
+<img src="tutorials/flyleaf.png"/>
 
 ### This repo is based on [MMDetection v2.25.3](https://github.com/open-mmlab/mmdetection) 
 
