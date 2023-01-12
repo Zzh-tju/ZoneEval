@@ -7,7 +7,7 @@
 This is the source codes of our paper.
 
 ```
-@article{zheng2023SELA,
+@article{zheng2023ZoneEval,
   title={Towards Spatial Equilibrium Object Detection},
   author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Cheng, Ming-Ming},
   journal={arxiv},
