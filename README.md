@@ -19,17 +19,17 @@ This is the source codes of our paper.
 ## Installation
 
 ```
-conda create --name SELA python=3.8 -y
+conda create --name ZoneEval python=3.8 -y
 
-conda activate SELA
+conda activate ZoneEval
 
 conda install pytorch=1.12 cudatoolkit=11.3 torchvision=0.13.0 -c pytorch
 
 pip install mmcv-full==1.6.0 -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.12.0/index.html
 
-git clone https://github.com/Zzh-tju/SELA.git
+git clone https://github.com/Zzh-tju/ZoneEval.git
 
-cd SELA/pycocotools
+cd ZoneEval/pycocotools
 
 pip install -e .
 
