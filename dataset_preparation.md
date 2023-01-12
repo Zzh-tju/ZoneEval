@@ -22,8 +22,7 @@ Download at Kaggle: [Face Mask](https://www.kaggle.com/datasets/parot99/face-mas
 If you download at our links, you can use it after `unzip` and put them to the proper dir.
 
 If you download at Kaggle links, you need to process the annotations to XML format if the data label is in YOLO format.
-
-The dowoloaded datasets from kaggle may have some errors:
+And there are some considerations:
 
  - For face mask dataset, we use the union of train set and valid set for training.
  - For fruit dataset, we found some images have errors. Please use our `train.txt and `test.txt` in `data/fruit/VOC2007/ImageSets/Main` to process the normal data.
