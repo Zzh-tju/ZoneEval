@@ -1,6 +1,6 @@
 # Zone Evaluation and Spatial Equilibrium Label Assignment
 
-This page is the tutorial to our CVPR 2023, created by [Zhaohui Zheng](https://github.com/Zzh-tju).
+This page is the tutorial to our [paper](https://), created by [Zhaohui Zheng](https://github.com/Zzh-tju).
 
 ## Note
 ### Chapter 1 -- [Introduction](https://github.com/Zzh-tju/SELA/blob/main/how-to-use.md#introduction)
