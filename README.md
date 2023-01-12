@@ -90,6 +90,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[VFNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/vfnet) | R101 | 2x | 41.5 | 46.2 | 15.6 | 36.7 | 43.0 | 45.0 | 44.5 | 48.8 |
 |[Deformable DETR](https://github.com/open-mmlab/mmdetection/tree/master/configs/deformable_detr) | R50 | 50e | 41.6 | 46.1 | 23.2 | 36.3 | 42.6 | 45.6 | 45.1 | 51.2|
 |[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R101 | 3x | 41.7 | 46.2 | 21.1 | 36.9 | 42.9 | 44.9 | 44.7 | 51.3 |
+|[GFocal R50](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl) | X101-32x4d | 2x | 41.8 | 46.1 | 15.7 | 37.0 | 43.5 | 45.0 | 44.4 | 49.3 |
 
 #### Note: 
  - 'TS': Training Schedule. 
