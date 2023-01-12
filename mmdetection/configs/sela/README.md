@@ -1,4 +1,4 @@
-# GFL
+# SELA
 
 > [Towards Spatial Equilibrium Object Detection](https://arxiv.org/abs/2006.04388)
 
