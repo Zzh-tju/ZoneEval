@@ -15,30 +15,15 @@ tar xf VOCtest_06-Nov-2007.tar
 
 ### Get The 3 Application Datasets:
 
+Download at our links: [Face Mask](https://drive.google.com/open?id=1fbBWeEKXrDt-hHHt3-7cJDojZR_ECi5w&authuser=0&usp=drive_link), [Fruit](https://drive.google.com/open?id=11DNfbHwbLP7Fg4wHwrh67sfZygsFKgx4&authuser=0&usp=drive_link), [Helmet](https://drive.google.com/open?id=1baU7YXZCpAYbw-ku05sro9oqvS1Lh70l&authuser=0&usp=drive_link).
 
 Download at Kaggle: [Face Mask](https://www.kaggle.com/datasets/parot99/face-mask-detection-yolo-darknet-format), [Fruit](https://www.kaggle.com/datasets/eunpyohong/fruit-object-detection), [Helmet](https://www.kaggle.com/datasets/vodan37/yolo-helmethead).
 
-The file dir follows the same settings to VOC-style.
+If you download at our links, you can use it after `unzip` and put them to the proper dir.
 
-```
-cd data
+If you download at Kaggle links, you need to process the annotations to XML format if the data label is in YOLO format.
 
-mkdir mask
-
-mkdir helmet
-
-mkdir fruit
-```
-
-#### Convert to XML format if the data label is YOLO format.
-
-Modify the file path to your datasets in `data/yolo2voc.py`, and run the command:
-
-```
-python data/yolo2voc.py
-```
-
-The dowoloaded datasets may have some errors:
+The dowoloaded datasets from kaggle may have some errors:
 
  - For face mask dataset, we use the union of train set and valid set for training.
  - For fruit dataset, we found some images have errors. Please use our `train.txt and `test.txt` in `data/fruit/VOC2007/ImageSets/Main` to process the normal data.
