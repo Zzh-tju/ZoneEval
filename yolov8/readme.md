@@ -12,13 +12,19 @@ You have to install numpy-1.23.3 to avoid error.
 conda install numpy=1.23.3
 ```
 
+Recompile
+
+```python
+ pip install -e '.[dev]'
+```
+
 Then run,
 
 ```python
 yolo mode=val task=detect data=coco.yaml model=yolov8n.pt device=\'0,1\'
 ```
 
-And you will see the zone evaluation results (YOLOv5-s):
+And you will see the zone evaluation results (YOLOv5-n):
 
 ```python
 Zone:, ZP, ZP50, ZP75, ZPs, ZPm, ZPl, ZR1, ZR10, ZR100, ZRs, ZRm, ZRl
