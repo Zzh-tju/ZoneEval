@@ -67,7 +67,11 @@ In this situation, an object can be well detected without being influenced by it
 
 #### With ZP, you can evaluate the object detectors in any way you want. It's up to you.
 
-Now, let's take a closer look at spatial bias. We create a simple yet heuristic experiment by manually reducing the object supervision signals in a certain zone.
+Now, let's take a closer look at spatial bias. 
+Some of you may have heard that if the dataset has few objects in a zone, the detector may perform poorly in that zone.
+Even if we admit it, how do we discover that? **ZP is made for this**.
+
+Here, we create a simple yet heuristic experiment by manually reducing the object supervision signals in a certain zone.
 
 We first evenly divide the full map into two (left and right) halves.
 Then, there are four pipeline settings for comparison: 
@@ -79,11 +83,23 @@ Then, there are four pipeline settings for comparison:
 3. `"left-1" detector: we only assign 1 positive location for every left zone object`.
  
 4. `"right-1" detector: the opposite settings to "left-1"`.
-5. 
+
 All the four detectors differ only in sampling process.
 During training, horizontal flip with a probability of 0.5 is used to ensure that both left and right objects participate in the model training.
 The evaluation is conducted on the left zone, the right zone and the whole image separately.
 
+1. **Imbalanced sampling of training samples causes severe spatial disequilibrium.** It can be seen that the detection performance of the "left-0" detector in the left zone is very poor, only 28.9 ZP@left, which lags behind ZP@right by 13.1. It is surprising that the detector cannot uniformly perform across the zones. If we adopt the horizontal flip during testing, it will be completely reversed for the left zone and the right one. The same observation can be seen from the "right-0" detector. This implies that the detection performance heavily depends on the positions of objects.
+And the detector is good at detecting objects in the favor zone, simply because it receives much more supervision signals and therefore be endowed much better detection ability during training.
+
+We also visualize the detection quality in Fig. \ref{fig:cat1}, where the cat shifts from left to right.
+It can be seen that the detection quality will significantly drop when the cat is not at the favor zone.
+If we flip the cat to the favor zone, the detection quality backs to normal immediately.
+
+<div align="center"><img src="cat-shift.pdf" width="300"/></div>
+
+one can see that the detector produces very weak classification responses for the cats in the disfavor zone.
+
+Such spatial bias has a great impact on the robustness of detection applications.
 ## Spatial Equilibrium Label Assignment (SELA)
 
 As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
