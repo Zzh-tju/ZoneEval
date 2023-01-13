@@ -69,7 +69,7 @@ In this situation, an object can be well detected without being influenced by it
 
 Now, let's take a closer look at spatial bias. 
 Some of you may have heard that if the dataset has few objects in a zone, the detector may perform poorly in that zone.
-Even if we admit it, how do we discover that? **ZP is made for this**.
+But the question is even if we admit it, how do we discover that? **ZP is made for this**.
 
 Here, we create a simple yet heuristic experiment by manually reducing the object supervision signals in a certain zone.
 
