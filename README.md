@@ -84,7 +84,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/pvt) | PVT-s_1x | 35.5 | 40.4 | 19.7 | 30.8 | 36.9 | 39.0 | 37.4 | 44.6 | 20.0 |
 [Cascade R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn) | R50_1x | 35.6 | 40.3 | 18.7 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 | 30.7 |
 |[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl) | R50_1x | 35.7 | 40.1 | 14.4 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 | 37.2 |
-|[YOLOv8-s](https://github.com/ultralytics/ultralytics) | | 39.8 | 44.9 | 24.4 | 33.4 | 42.2 | 44.3 | 43.2 | 48.5 | 120.4 |
+|[YOLOv8-s](https://github.com/ultralytics/ultralytics) | | 39.8 | 44.9 | 24.4 | 33.4 | 42.2 | 44.3 | 43.2 | 48.5 | 128.5 |
 |[Cascade Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn) | R101_3x | 40.3 | 45.4 | 22.4 | 34.7 | 41.6 | 44.3 | 44.4 | 49.1 | 18.7 |
 |[Sparse R-CNN 300 proposals](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R50_3x | 40.6 | 45.0 | 21.6 | 35.8 | 41.9 | 43.4 | 44.0 | 50.3 | 32.1 |
 |[YOLOv5-m](https://github.com/ultralytics/yolov5) | | 40.8 | 45.2 | 12.9 | 36.0 | 42.3 | 44.5 | 43.2 | 46.7 | 104.6 |
