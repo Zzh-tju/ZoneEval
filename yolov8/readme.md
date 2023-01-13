@@ -43,6 +43,8 @@ SP: [       32.3        45.4        34.8        17.5        38.9        48.9    
 
 ### Comparison between YOLOv8 and YOLOv5
 
+Size: 640.
+
 | Detector | SP | $\text{ZP}^{0,5}$| Variance | $\text{ZP}^{0,1}$ | $\text{ZP}^{1,2}$ | $\text{ZP}^{2,3}$ | $\text{ZP}^{3,4}$ | $\text{ZP}^{4,5}$ | params<br><sup>(M) | FLOPs<br><sup>(B) |
 |----------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 |[YOLOv5-s](https://github.com/ultralytics/yolov5) | 33.3 | 37.4 | 10.5 | 28.8 | 34.9 | 36.9 | 35.1 | 38.4 | 7.2 | 16.5 |
