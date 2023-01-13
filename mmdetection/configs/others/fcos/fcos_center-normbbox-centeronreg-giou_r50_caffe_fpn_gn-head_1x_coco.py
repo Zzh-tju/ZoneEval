@@ -13,7 +13,7 @@ model = dict(
         conv_bias=True,
         loss_bbox=dict(type='GIoULoss', loss_weight=1.0)),
     # training and testing settings
-    test_cfg=dict(nms=dict(type='nms', iou_threshold=0.6)))
+    test_cfg=dict(nms=dict(type='nms', iou_threshold=0.6), zone_eval=True))
 
 # dataset settings
 img_norm_cfg = dict(
