@@ -99,10 +99,10 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[GFocal](mmdetection/configs/others/gfl/gfl_x101_32x4d_fpn_mstrain_2x_coco.py) | [X101-32x4d_2x](https://download.openmmlab.com/mmdetection/v2.0/gfl/gfl_x101_32x4d_fpn_mstrain_2x_coco/gfl_x101_32x4d_fpn_mstrain_2x_coco_20200630_102002-50c1ffdb.pth) | 41.8 | 46.1 | 15.7 | 37.0 | 43.5 | 45.0 | 44.4 | 49.3 | 25.2 |
 
 #### Note: 
- - 'TS': Training Schedule. 
+ - '**TS**': Training Schedule. 
  - ' $\text{ZP}^{0,5}$ ': the traditional AP.
- - 'Variance': the variance of the 5 ZPs ( $\text{ZP}^{0,1}$, $\text{ZP}^{1,2}$, ..., $\text{ZP}^{4,5}$ ).
- - FPS is measured on a single RTX 3090 GPU. Class score threshold=0.05, NMS IoU threshold=0.6. The test resolusion is 640 for YOLOv5 and YOLOv8, while      [1333, 800] for the others.
+ - '**Variance**': the variance of the 5 ZPs ( $\text{ZP}^{0,1}$, $\text{ZP}^{1,2}$, ..., $\text{ZP}^{4,5}$ ).
+ - '**FPS**' is measured on a single RTX 3090 GPU. Class score threshold=0.05, NMS IoU threshold=0.6. The test resolusion is 640 for YOLOv5 and YOLOv8, while [1333, 800] for the others.
  - If you test DETR series, you must modify the `simple_test()` function in `mmdet/models/detectors/single_stage.py`,
 
 ```python
