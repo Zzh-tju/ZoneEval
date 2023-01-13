@@ -90,3 +90,4 @@ optimizer = dict(
         }))
 lr_config = dict(warmup_iters=1000, step=[27, 33])
 runner = dict(max_epochs=36)
+evaluation = dict(metric=['bbox'])
