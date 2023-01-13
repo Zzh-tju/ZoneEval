@@ -3,4 +3,5 @@ model = dict(
     backbone=dict(
         num_layers=[3, 4, 6, 3],
         init_cfg=dict(checkpoint='https://github.com/whai362/PVT/'
-                      'releases/download/v2/pvt_small.pth')))
+                      'releases/download/v2/pvt_small.pth')),
+    test_cfg=dict(zone_eval=True))
