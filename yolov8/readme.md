@@ -4,8 +4,6 @@ Download YOLOv8 from https://github.com/ultralytics/ultralytics and install the 
 
 Make sure you have compiled our [pycocotools](https://github.com/Zzh-tju/SELA#installation).
 
-Download the pretrained weight file, e.g., YOLOv8-n, from the official website.
-
 Replace `./yourpath/ultralytics/ultralytics/yolo/v8/detect/val.py` with our provided file `val.py`.
 
 You have to install numpy-1.23.3 to avoid error.
