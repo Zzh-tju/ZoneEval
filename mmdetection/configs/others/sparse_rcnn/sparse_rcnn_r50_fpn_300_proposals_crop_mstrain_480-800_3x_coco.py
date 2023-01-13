@@ -3,7 +3,7 @@ num_proposals = 300
 model = dict(
     rpn_head=dict(num_proposals=num_proposals),
     test_cfg=dict(
-        _delete_=True, rpn=None, rcnn=dict(max_per_img=num_proposals), test_cfg=dict(zone_eval=True)))
+        _delete_=True, rpn=None, rcnn=dict(max_per_img=num_proposals), zone_eval=True))
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 
