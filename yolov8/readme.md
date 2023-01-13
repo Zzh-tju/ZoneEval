@@ -41,9 +41,7 @@ SP, SP50, SP75, SPs, SPm, SPl, SR1, SR10, SR100, SRs, SRm, SRl
 SP: [       32.3        45.4        34.8        17.5        38.9        48.9        37.3        52.6        54.6        35.5          63        71.8]
 ```
 
-### Comparison between YOLOv8 and YOLOv5
-
-Size: 640.
+Test resolution: 640.
 
 | Detector | SP | $\text{ZP}^{0,5}$| Variance | $\text{ZP}^{0,1}$ | $\text{ZP}^{1,2}$ | $\text{ZP}^{2,3}$ | $\text{ZP}^{3,4}$ | $\text{ZP}^{4,5}$ | params<br><sup>(M) | FLOPs<br><sup>(B) |
 |----------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
