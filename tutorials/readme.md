@@ -63,6 +63,15 @@ where $\bar{\mathrm{ZP}}$ is the mean value of ZPs.
 Ideally, if $\sigma(\mathrm{ZP})=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
 In this situation, an object can be well detected without being influenced by its spatial position.
 
+## Interesting Experiments
+
+#### With ZP, you can evaluate the object detectors in any way you want. It's up to you.
+
+Now, I'm going to create a simple yet heuristic experiment by manually reducing the object supervision signals in a certain zone.
+
+We first evenly divide the full map into two (left and right) halves.
+Then, there are four pipeline settings for comparison: ``left-0" detector, we train the network by discarding all the objects whose centers lie in the left zone of the image; ``right-0" detector, analogous to ``left-0" detector by discarding the right zone objects; ``left-1" detector , we only assign 1 positive sample for every left zone object; and ``right-1" detector, the opposite settings to ``left-1".
+
 ## Spatial Equilibrium Label Assignment (SELA)
 
 As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
