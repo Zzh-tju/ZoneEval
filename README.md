@@ -2,7 +2,7 @@
 
 ### This repo is based on [MMDetection v2.25.3](https://github.com/open-mmlab/mmdetection) 
 
-### Here is a detailed step-by-step [tutorial](https://github.com/Zzh-tju/SELA/blob/main/tutorial.md).
+### Here is a detailed step-by-step [tutorial](tutorials/tutorial.md).
 
 This is the source codes of our paper.
 
