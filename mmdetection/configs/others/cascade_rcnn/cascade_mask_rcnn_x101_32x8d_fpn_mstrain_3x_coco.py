@@ -13,7 +13,8 @@ model = dict(
         style='pytorch',
         init_cfg=dict(
             type='Pretrained',
-            checkpoint='open-mmlab://detectron2/resnext101_32x8d')))
+            checkpoint='open-mmlab://detectron2/resnext101_32x8d')),
+    test_cfg=dict(zone_eval=True))
 
 # ResNeXt-101-32x8d model trained with Caffe2 at FB,
 # so the mean and std need to be changed.
