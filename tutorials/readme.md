@@ -95,7 +95,7 @@ We also visualize the detection quality in Fig. \ref{fig:cat1}, where the cat sh
 It can be seen that the detection quality will significantly drop when the cat is not at the favor zone.
 If we flip the cat to the favor zone, the detection quality backs to normal immediately.
 
-<div align="center"><img src="cat-shift.pdf" width="300"/></div>
+<div align="center"><img src="cat-shift.png" width="300"/></div>
 
 one can see that the detector produces very weak classification responses for the cats in the disfavor zone.
 
