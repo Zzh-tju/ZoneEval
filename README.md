@@ -75,7 +75,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[RetinaNet](https://github.com/open-mmlab/mmdetection/tree/master/configs/retinanet) | R50_2x | 32.6 | 37.4 | 16.9 | 27.6 | 34.6 | 35.8 | 35.1 | 40.4 | 35.4 |
 |[Faster R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/faster_rcnn) | R50_1x | 33.1 | 37.4 | 11.8 | 29.3 | 34.2 | 36.1 | 35.0 | 39.9 | 37.5 |
 |[YOLOF](https://github.com/open-mmlab/mmdetection/tree/master/configs/yolof) | R50_1x | 33.2 | 37.5 | 12.8 | 28.4 | 35.2 | 36.6 | 35.3 | 39.2 | 61.6 |
-|[Sparse R-CNN 100 proposals](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R50_1x | 33.3 | 37.9 | 22.8 | 27.8 | 34.7 | 37.1 | 37.1 | 42.6 | 37.8 |
+|[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R50_1x | 33.3 | 37.9 | 22.8 | 27.8 | 34.7 | 37.1 | 37.1 | 42.6 | 37.8 |
 |[YOLOv5-s](https://github.com/ultralytics/yolov5) | | 33.3 | 37.4 | 10.5 | 28.8 | 34.9 | 36.9 | 35.1 | 38.4 | 140.0 |
 |[RepPoints](https://github.com/open-mmlab/mmdetection/tree/master/configs/reppoints) | R50_1x | 33.5 | 38.1 | 12.9 | 29.2 | 34.7 | 36.7 | 35.6 | 40.3 | 27.4 |
 |[FCOS](https://github.com/open-mmlab/mmdetection/tree/master/configs/fcos) | R50_1x | 34.2 | 38.7 | 14.7 | 29.5 | 35.3 | 38.0 | 36.7 | 41.1 | 37.3 |
@@ -86,7 +86,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[GFocal](https://github.com/open-mmlab/mmdetection/tree/master/configs/gfl) | R50_1x | 35.7 | 40.1 | 14.4 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 | 37.2 |
 |[YOLOv8-s](https://github.com/ultralytics/ultralytics) | | 39.8 | 44.9 | 24.4 | 33.4 | 42.2 | 44.3 | 43.2 | 48.5 | 128.5 |
 |[Cascade Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/cascade_rcnn) | R101_3x | 40.3 | 45.4 | 22.4 | 34.7 | 41.6 | 44.3 | 44.4 | 49.1 | 18.7 |
-|[Sparse R-CNN 300 proposals](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R50_3x | 40.6 | 45.0 | 21.6 | 35.8 | 41.9 | 43.4 | 44.0 | 50.3 | 32.1 |
+|[Sparse R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/sparse_rcnn) | R50_3x | 40.6 | 45.0 | 21.6 | 35.8 | 41.9 | 43.4 | 44.0 | 50.3 | 32.1 |
 |[YOLOv5-m](https://github.com/ultralytics/yolov5) | | 40.8 | 45.2 | 12.9 | 36.0 | 42.3 | 44.5 | 43.2 | 46.7 | 104.6 |
 | |
 [Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/master/configs/swin) | Swin-T_3x | 40.9 | 46.0 | 15.4 | 36.8 | 41.7 | 44.1 | 43.5 | 49.0 | 24.3 |
