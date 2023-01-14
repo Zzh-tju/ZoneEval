@@ -30,3 +30,13 @@ ZP_variance:  [     10.488      20.739       15.42      6.6149      7.2542      
 SP, SP50, SP75, SPs, SPm, SPl, SR1, SR10, SR100, SRs, SRm, SRl
 SP: [       33.3        50.5        35.6        20.9        40.1        45.6        36.7        51.3        53.2        38.1        60.1        67.5]
 ```
+
+Test resolution: 640.
+
+| Detector | SP | $\text{ZP}^{0,5}$| Variance | $\text{ZP}^{0,1}$ | $\text{ZP}^{1,2}$ | $\text{ZP}^{2,3}$ | $\text{ZP}^{3,4}$ | $\text{ZP}^{4,5}$ | params<br><sup>(M) | FLOPs<br><sup>(B) |
+|----------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+|[YOLOv5-s](https://github.com/ultralytics/yolov5) | 33.3 | 37.4 | 10.5 | 28.8 | 34.9 | 36.9 | 35.1 | 38.4 | 7.2 | 16.5 |
+|[YOLOv8-n](https://github.com/ultralytics/ultralytics) | 32.3 | 37.3 | 19.7 | 26.4 | 34.0 | 37.0 | 35.8 | 39.6 | 3.2 | 8.7 |
+| |
+|[YOLOv5-m](https://github.com/ultralytics/yolov5) | 40.8 | 45.2 | 12.9 | 36.0 | 42.3 | 44.5 | 43.2 | 46.7 | 21.2 | 49.0 |
+|[YOLOv8-s](https://github.com/ultralytics/ultralytics) | 39.8 | 44.9 | 24.4 | 33.4 | 42.2 | 44.3 | 43.2 | 48.5 | 11.2 | 28.6 |
