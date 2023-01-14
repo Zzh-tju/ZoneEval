@@ -116,6 +116,7 @@ However, if the frequency of the supervision signal in the spatial zone is imbal
 It forms a zone-oriented convolution kernel, just like the case above, left zone favored or right zone favored.
 
 <div align="center"><img src="cat-response.png" width="600"/></div>
+Visualization of the class score on P4, P5 and P6 FPN levels. 
 
 As shown, one can see that the "left-0" detector produces very weak classification responses for the cats in the disfavor zone.
 
