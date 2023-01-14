@@ -63,7 +63,7 @@ where $\bar{\mathrm{ZP}}$ is the mean value of ZPs.
 Ideally, if $\sigma(\mathrm{ZP})=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
 In this situation, an object can be well detected without being influenced by its spatial position.
 
-### Something Interesting
+## Something Interesting
 
 #### With ZP, you can evaluate the object detectors in any way you want. It's up to you.
 
@@ -115,9 +115,12 @@ This is actually a little bit counter-intuitive, because the learning unit of th
 However, if the frequency of the supervision signal in the spatial zone is imbalanced, the learning of the convolution kernel is ultimately affected.
 It forms a zone-oriented convolution kernel, just like the case above, left zone favored or right zone favored.
 
-one can see that the detector produces very weak classification responses for the cats in the disfavor zone.
+<img src="cat-response.png"/>
+
+As shown, one can see that the "left-0" detector produces very weak classification responses for the cats in the disfavor zone.
 
 Such spatial bias has a great impact on the robustness of detection applications.
+
 ## Spatial Equilibrium Label Assignment (SELA)
 
 As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
