@@ -24,7 +24,7 @@ Then run,
 yolo mode=val task=detect data=coco.yaml model=yolov8n.pt device=\'0,1\'
 ```
 
-And you will see the zone evaluation results (YOLOv5-n):
+And you will see the zone evaluation results (YOLOv8-n):
 
 ```python
 Zone:, ZP, ZP50, ZP75, ZPs, ZPm, ZPl, ZR1, ZR10, ZR100, ZRs, ZRm, ZRl
