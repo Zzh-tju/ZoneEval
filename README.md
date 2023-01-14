@@ -2,7 +2,7 @@
 
 ### Here is a detailed step-by-step [tutorial](tutorials/readme.md).
 
-#### This is the source codes of our paper. We provide the zone evaluation on [MMDetection v2.25.3](mmdetection), [YOLOv5](yolov5), and [YOLOv8](yolov8).
+#### This is the source codes of our paper. We provide zone evaluation on [MMDetection v2.25.3](mmdetection), [YOLOv5](yolov5), and [YOLOv8](yolov8).
 
 ```
 @article{zheng2023ZoneEval,
