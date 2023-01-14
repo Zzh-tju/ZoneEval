@@ -77,7 +77,7 @@ In this way, we can simulate the scene with few objects in a zone.
 We first evenly divide the full map into two (left and right) halves.
 Then, there are four pipeline settings for comparison: 
 
-:one: `"left-0" detector: we train the network by discarding all the objects whose centers lie in the left zone of the image`.
+:one:: `"left-0" detector: we train the network by discarding all the objects whose centers lie in the left zone of the image`.
 
 2️⃣: `"right-0" detector: analogous to "left-0" detector by discarding the right zone objects`.
 
