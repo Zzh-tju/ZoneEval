@@ -138,12 +138,12 @@ And it should be noted that the performance gap still exists as the sampling rem
 
 You may wonder how would the performance be if we define a finer zone division, for instance, $11\times 11$ zones, just like for counting the center points of all the ground-truth boxes.
 
-<div align="center"><img src="correlation.png" width="500"/></div>
+<div align="center"><img src="correlation.png" width="550"/></div>
 
 Here, we evaluate the detection performance in the 121 zones one by one.
 To quantitatively investigate the correlation between the zone metrics and the object distribution, we calculate the Pearson Correlation Coefficient (PCC) and the Spearman Correlation Coefficient (SCC) between the mZP and the object distribution of the test set. (Note: mZP denotes mAP in the zone.)
 
-<div align="center"><img src="PCC-SCC.png" width="500"/></div>
+<div align="center"><img src="PCC-SCC.png" width="550"/></div>
 
 As shown in picture, we get the following deep reflection about the spatial bias.
 
