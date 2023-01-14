@@ -100,6 +100,8 @@ The evaluation is conducted on the left zone, the right zone and the full map se
 | Right-1 | | 45.7 | 41.0 | 49.2 |
 | Right-1 | :heavy_check_mark: | 42.0 | 45.3 | 49.0 |
 
+Note: The experiments are conducted on GFocal ResNet-18 with PASCAL VOC 07+12 training and testing protocol.
+
 #### Imbalanced sampling of training samples causes severe spatial disequilibrium.
 
 It can be seen that the detection performance of the "left-0" detector in the left zone is very poor, only 28.9 ZP@left, which lags behind ZP@right by 13.1. It is surprising that the detector cannot uniformly perform across the zones. If we adopt the horizontal flip during testing, it will be completely reversed for the left zone and the right one. The same observation can be seen from the "right-0" detector. This implies that the detection performance heavily depends on the positions of objects.
