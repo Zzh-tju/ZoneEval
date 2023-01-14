@@ -151,7 +151,7 @@ We first note that all the PCC $>0.3$, which indicates that the detection perfor
 As a reminder, the PCC only reflects the linear correlation of two given vectors, while it may fail when they are curvilinearly correlated.
 The Spearman correlation reflects a higher ranking correlation between the mZP and the object distribution with all the SCC $>0.45$.
 This illustrates that the detection performance has a similar trend to the object distribution.
-Our SELA substantially reduces these correlations, indicating a lower correlation with the object distribution, which we will talk about later.
+Our SELA substantially reduces these correlations, indicating a lower correlation with the object distribution.
 
 ## Spatial Equilibrium Label Assignment (SELA)
 
