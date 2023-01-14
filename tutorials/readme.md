@@ -136,7 +136,22 @@ And it should be noted that the performance gap still exists as the sampling rem
 
 ## Correlation with Object Distribution
 
+You may wonder how would the performance be if we define a finer zone division, for instance, $11\times 11$ zones, just like for counting the center points of all the ground-truth boxes.
+
 <div align="center"><img src="correlation.png" width="500"/></div>
+
+Here, we evaluate the detection performance in the 121 zones one by one.
+To quantitatively investigate the correlation between the zone metrics and the object distribution, we calculate the Pearson Correlation Coefficient (PCC) and the Spearman Correlation Coefficient (SCC) between the mZP and the object distribution of the test set. (Note: mZP denotes mAP in the zone.)
+
+<div align="center"><img src="PCC-SCC.png" width="500"/></div>
+
+As shown in picture, we get the following deep reflection about the spatial bias.
+
+We first note that all the PCC $>0.3$, which indicates that the detection performance is moderately linear correlated with the object distribution.
+As a reminder, the PCC only reflects the linear correlation of two given vectors, while it may fail when they are curvilinearly correlated.
+The Spearman correlation reflects a higher ranking correlation between the mZP and the object distribution with all the SCC $>0.45$.
+This illustrates that the detection performance has a similar trend to the object distribution.
+Our SELA substantially reduces these correlations, indicating a lower correlation with the object distribution, which we will talk about later.
 
 ## Spatial Equilibrium Label Assignment (SELA)
 
