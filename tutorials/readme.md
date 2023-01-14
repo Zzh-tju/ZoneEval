@@ -89,7 +89,7 @@ All the four detectors differ only in sampling process.
 During training, horizontal flip with a probability of 0.5 is used to ensure that both left and right objects participate in the model training.
 The evaluation is conducted on the left zone, the right zone and the full map separately, denoted by ZP@left, ZP@right, and ZP@full.
 
-| Detector | Horizontal Flip | ZP@left | ZP@right | ZP@full |
+| Detector | Test time Horizontal Flip | ZP@left | ZP@right | ZP@full |
 |:----------:|:----------:|:----------:|:----------:|:----------:|
 | Left-0 | | 28.9 | 42.0 | 40.9 |
 | Left-0 | :heavy_check_mark: | 42.3 | 28.8 | 40.8 |
@@ -104,11 +104,16 @@ The evaluation is conducted on the left zone, the right zone and the full map se
 **Imbalanced sampling of training samples causes severe spatial disequilibrium.** It can be seen that the detection performance of the "left-0" detector in the left zone is very poor, only 28.9 ZP@left, which lags behind ZP@right by 13.1. It is surprising that the detector cannot uniformly perform across the zones. If we adopt the horizontal flip during testing, it will be completely reversed for the left zone and the right one. The same observation can be seen from the "right-0" detector. This implies that the detection performance heavily depends on the positions of objects.
 And the detector is good at detecting objects in the favor zone, simply because it receives much more supervision signals and therefore be endowed much better detection ability during training.
 
-We also visualize the detection quality in Fig. \ref{fig:cat1}, where the cat shifts from left to right.
+We also visualize the detection quality as below, where the cat shifts from left to right.
 It can be seen that the detection quality will significantly drop when the cat is not at the favor zone.
 If we flip the cat to the favor zone, the detection quality backs to normal immediately.
 
 <img src="cat-shift.png"/>
+
+You see, even for the same object and the background is pure white, the detection quality still changes dramatically.
+This is actually a little bit counter-intuitive, because the learning unit of the neural network is the convolution kernel, and it always slides over the entire image.
+However, if the frequency of the supervision signal in the spatial zone is imbalanced, the learning of the convolution kernel is ultimately affected.
+It forms a zone-oriented convolution kernel, just like the case above, left zone favored or right zone favored.
 
 one can see that the detector produces very weak classification responses for the cats in the disfavor zone.
 
