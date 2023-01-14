@@ -121,7 +121,7 @@ And it forms a zone-oriented convolution kernel, just like the case above, left 
 <div align="center"><img src="cat-response.png" width="500"/></div>
 
 As shown, one can see that the "left-0" detector produces very weak classification responses for the cats in the disfavor zone.
-
+The left-0 detector fails to detect these cats since they seem to disappear in the left zone.
 Such spatial bias has a great impact on the robustness of detection applications.
 
 #### Traditional metrics fail to capture spatial bias.
