@@ -136,7 +136,7 @@ And it should be noted that the performance gap still exists as the sampling rem
 
 ## Correlation with Object Distribution
 
-You may wonder how would the performance be if we define a finer zone division, for instance, $11\times 11$ zones, just like for counting the center points of all the ground-truth boxes.
+You may wonder how would the performance be if we define a finer zone division, for instance, $11\times 11$ zones, just like for counting the center points of all the ground-truth boxes, i.e., the object distribution.
 
 <div align="center"><img src="correlation.png" width="550"/></div>
 
