@@ -115,7 +115,7 @@ This is actually a little bit counter-intuitive, because the learning unit of th
 However, if the frequency of the supervision signal in the spatial zone is imbalanced, the learning of the convolution kernel is ultimately affected.
 It forms a zone-oriented convolution kernel, just like the case above, left zone favored or right zone favored.
 
-<img src="cat-response.png"/>
+<div align="center"><img src="cat-response.png" width="600"/></div>
 
 As shown, one can see that the "left-0" detector produces very weak classification responses for the cats in the disfavor zone.
 
