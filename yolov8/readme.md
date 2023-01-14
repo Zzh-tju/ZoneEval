@@ -50,3 +50,5 @@ Test resolution: 640.
 | |
 |[YOLOv5-m](https://github.com/ultralytics/yolov5) | 40.8 | 45.2 | 12.9 | 36.0 | 42.3 | 44.5 | 43.2 | 46.7 | 21.2 | 49.0 |
 |[YOLOv8-s](https://github.com/ultralytics/ultralytics) | 39.8 | 44.9 | 24.4 | 33.4 | 42.2 | 44.3 | 43.2 | 48.5 | 11.2 | 28.6 |
+
+ **Discussion**: If we compare YOLOv8 and YOLOv5 with similar AP, the improvement of YOLOv8 mainly comes from large objects and central zone. Besides, YOLOv5 performs better in spatial equilibrium.
