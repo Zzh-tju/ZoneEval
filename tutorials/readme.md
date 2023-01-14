@@ -37,6 +37,8 @@ Then, for an arbitrary evaluation metric, for instance Average Precision (AP), t
 
 For implementation, please refer to [Zone evaluation](implementation.md).
 
+#### With ZP, you can evaluate the object detectors in any way you want. It's up to you.
+
 ### Spatial Equilibrium Precision
 
 Now that we have 5 ZPs, and they indeed provide more information about the detector's performance. We further present a **S**patial equilibrium **P**recision (SP), and we use this single value to characterize the detection performance for convenient usage.
@@ -64,8 +66,6 @@ Ideally, if $\sigma(\mathrm{ZP})=0$, the object detector reaches perfectly spati
 In this situation, an object can be well detected without being influenced by its spatial position.
 
 ## Something Interesting - A closer look at spatial bias
-
-#### With ZP, you can evaluate the object detectors in any way you want. It's up to you.
 
 Some of you may have heard that if the dataset has few objects in a zone, the detector may perform poorly in that zone.
 The question is even if we admit that, how do we discover it? Is there any quantitive evidence? **ZP is made for this**.
@@ -100,7 +100,9 @@ The evaluation is conducted on the left zone, the right zone and the full map se
 | Right-1 | | 45.7 | 41.0 | 49.2 |
 | Right-1 | :heavy_check_mark: | 42.0 | 45.3 | 49.0 |
 
-**Imbalanced sampling of training samples causes severe spatial disequilibrium.** It can be seen that the detection performance of the "left-0" detector in the left zone is very poor, only 28.9 ZP@left, which lags behind ZP@right by 13.1. It is surprising that the detector cannot uniformly perform across the zones. If we adopt the horizontal flip during testing, it will be completely reversed for the left zone and the right one. The same observation can be seen from the "right-0" detector. This implies that the detection performance heavily depends on the positions of objects.
+#### Imbalanced sampling of training samples causes severe spatial disequilibrium.
+
+It can be seen that the detection performance of the "left-0" detector in the left zone is very poor, only 28.9 ZP@left, which lags behind ZP@right by 13.1. It is surprising that the detector cannot uniformly perform across the zones. If we adopt the horizontal flip during testing, it will be completely reversed for the left zone and the right one. The same observation can be seen from the "right-0" detector. This implies that the detection performance heavily depends on the positions of objects.
 And the detector is good at detecting objects in the favor zone, simply because it receives much more supervision signals and therefore be endowed much better detection ability during training.
 
 We also visualize the detection quality as below, where the cat shifts from left to right.
@@ -119,6 +121,16 @@ And it forms a zone-oriented convolution kernel, just like the case above, left 
 As shown, one can see that the "left-0" detector produces very weak classification responses for the cats in the disfavor zone.
 
 Such spatial bias has a great impact on the robustness of detection applications.
+
+#### Traditional metrics fail to capture spatial bias.
+
+One can see that the "left-0" detector produces a 40.9 ZP@full (traditional AP), which is unable to provide a reference for where and how much the performance drops.
+Our zone metrics provide more meaningful information about the detection performance.
+
+#### Increasing training samples for the disfavor zone shrinks the performance gap between zones.
+
+The Table above also shows us promising results that the performance gap between the two zones can be significantly shrunk by simply increasing positive samples for the disfavor zones.
+And it should be noted that the performance gap still exists as the sampling remains imbalanced.
 
 ## Spatial Equilibrium Label Assignment (SELA)
 
