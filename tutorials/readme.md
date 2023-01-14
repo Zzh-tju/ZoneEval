@@ -63,13 +63,12 @@ where $\bar{\mathrm{ZP}}$ is the mean value of ZPs.
 Ideally, if $\sigma(\mathrm{ZP})=0$, the object detector reaches perfectly spatial equilibrium under the current zone division.
 In this situation, an object can be well detected without being influenced by its spatial position.
 
-## Something Interesting
+## Something Interesting - A closer look at spatial bias
 
 #### With ZP, you can evaluate the object detectors in any way you want. It's up to you.
 
-Now, let's take a closer look at spatial bias. 
 Some of you may have heard that if the dataset has few objects in a zone, the detector may perform poorly in that zone.
-But the question is even if we admit it, how do we discover that? Is there any quantitive evidence? **ZP is made for this**.
+The question is even if we admit that, how do we discover it? Is there any quantitive evidence? **ZP is made for this**.
 
 Here, we create a simple yet heuristic experiment by manually reducing the object supervision signals in a certain zone.
 In this way, we can simulate the scene with few objects in a zone.
