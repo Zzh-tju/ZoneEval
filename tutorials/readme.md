@@ -134,6 +134,10 @@ Our zone metrics provide more meaningful information about the detection perform
 The Table above also shows us promising results that the performance gap between the two zones can be significantly shrunk by simply increasing positive samples for the disfavor zones.
 And it should be noted that the performance gap still exists as the sampling remains imbalanced.
 
+## Correlation with Object Distribution
+
+<div align="center"><img src="correlation.png" width="500"/></div>
+
 ## Spatial Equilibrium Label Assignment (SELA)
 
 As a preliminary attempt, SELA utilizes a prior spatial weight to re-balance the sampling process during model training.
