@@ -69,24 +69,25 @@ In this situation, an object can be well detected without being influenced by it
 
 Now, let's take a closer look at spatial bias. 
 Some of you may have heard that if the dataset has few objects in a zone, the detector may perform poorly in that zone.
-But the question is even if we admit it, how do we discover that? **ZP is made for this**.
+But the question is even if we admit it, how do we discover that? Is there any quantitive evidence? **ZP is made for this**.
 
 Here, we create a simple yet heuristic experiment by manually reducing the object supervision signals in a certain zone.
+In this way, we can simulate the scene with few objects in a zone.
 
 We first evenly divide the full map into two (left and right) halves.
 Then, there are four pipeline settings for comparison: 
 
-1. `"left-0" detector: we train the network by discarding all the objects whose centers lie in the left zone of the image`.
+:one: `"left-0" detector: we train the network by discarding all the objects whose centers lie in the left zone of the image`.
 
-2. `"right-0" detector: analogous to "left-0" detector by discarding the right zone objects`.
+2️⃣: `"right-0" detector: analogous to "left-0" detector by discarding the right zone objects`.
 
-3. `"left-1" detector: we only assign 1 positive location for every left zone object`.
+3️⃣: `"left-1" detector: we only assign 1 positive location for every left zone object`.
  
-4. `"right-1" detector: the opposite settings to "left-1"`.
+4️⃣: `"right-1" detector: the opposite settings to "left-1"`.
 
 All the four detectors differ only in sampling process.
 During training, horizontal flip with a probability of 0.5 is used to ensure that both left and right objects participate in the model training.
-The evaluation is conducted on the left zone, the right zone and the whole image separately.
+The evaluation is conducted on the left zone, the right zone and the full map separately, denoted by ZP@left, ZP@right, and ZP@full.
 
 | Detector | Horizontal Flip | ZP@left | ZP@right | ZP@full |
 |:----------:|:----------:|:----------:|:----------:|:----------:|
