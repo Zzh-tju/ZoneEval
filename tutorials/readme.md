@@ -115,7 +115,7 @@ If we flip the cat to the favor zone, the detection quality backs to normal imme
 
 You see, even for the same object and the background is pure white, the detection quality still changes dramatically.
 This is actually a little bit counter-intuitive, because the learning unit of the neural network is the convolution kernel, and it always slides over the entire image.
-However, if the frequency of the supervision signal is imbalanced over the spatial zone, the learning of the convolution kernel is ultimately affected.
+However, if the frequency of the supervision signal is imbalanced over the spatial zone, the learning of the convolution kernel will be affected ultimately.
 And it forms a zone-oriented convolution kernel, just like the case above, left zone favored or right zone favored.
 
 <div align="center"><img src="cat-response.png" width="500"/></div>
