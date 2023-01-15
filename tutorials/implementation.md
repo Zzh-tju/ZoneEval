@@ -276,7 +276,9 @@ where we set all the ground-truth boxes whose centers are outside the zone to be
 
 Of course, we pack up `pycocotools` in our repository.
 
-Finally, once we get ZP of 5 zones, we calculate [Spatial equilibrium Precision](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/tools/test.py#L393) (SP) by computing the area weighted sum of ZP.
+Once we get ZP of 5 zones, we calculate the variance of ZP to measure the degree of discreteness for zone performance.
+
+Finally, we calculate [Spatial equilibrium Precision](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/tools/test.py#L393) (SP) by computing the area weighted sum of ZP.
 
 ```python
 SP = 0.36 * ZP[0,:] + 0.28 * ZP[1,:] + 0.2 * ZP[2,:] + 0.12 * ZP[3,:] + 0.04 * ZP[4,:]
