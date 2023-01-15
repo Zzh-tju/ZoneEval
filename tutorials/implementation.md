@@ -210,12 +210,14 @@ Also, in `tools/test.py`,
             or cfg.evaluation.get('gpu_collect', False))
         ......
                 if cfg.evaluation.metric == 'bbox':
-                    eval_results, metric, _, _= dataset.zone_evaluate(outputs, **eval_kwargs, ri=0.0, rj=0.5)
-                    eval_results0_1, metric0_1, _, _ = dataset.zone_evaluate(outputs0_1, **eval_kwargs, ri=0.0, rj=0.1)
-                    eval_results1_2, metric1_2, _, _ = dataset.zone_evaluate(outputs1_2, **eval_kwargs, ri=0.1, rj=0.2)
-                    eval_results2_3, metric2_3, _, _ = dataset.zone_evaluate(outputs2_3, **eval_kwargs, ri=0.2, rj=0.3)
-                    eval_results3_4, metric3_4, _, _ = dataset.zone_evaluate(outputs3_4, **eval_kwargs, ri=0.3, rj=0.4)
-                    eval_results4_5, metric4_5, _, _ = dataset.zone_evaluate(outputs4_5, **eval_kwargs, ri=0.4, rj=0.5)
+                    ZP = np.zeros([5,7])
+                    ZP_class = np.zeros([5,num_class])
+                    eval_results, metric, ap_class, _= dataset.zone_evaluate(outputs, **eval_kwargs, ri=0.0, rj=0.5)
+                    eval_results0_1, metric0_1, ap_class0_1, _ = dataset.zone_evaluate(outputs0_1, **eval_kwargs, ri=0.0, rj=0.1)
+                    eval_results1_2, metric1_2, ap_class1_2, _ = dataset.zone_evaluate(outputs1_2, **eval_kwargs, ri=0.1, rj=0.2)
+                    eval_results2_3, metric2_3, ap_class2_3, _ = dataset.zone_evaluate(outputs2_3, **eval_kwargs, ri=0.2, rj=0.3)
+                    eval_results3_4, metric3_4, ap_class3_4, _ = dataset.zone_evaluate(outputs3_4, **eval_kwargs, ri=0.3, rj=0.4)
+                    eval_results4_5, metric4_5, ap_class4_5, _ = dataset.zone_evaluate(outputs4_5, **eval_kwargs, ri=0.4, rj=0.5)
       ......
 ```
 
@@ -244,8 +246,9 @@ from .api_wrappers import COCO, COCOeval, COCO_zone_eval
             cocoEval = COCO_zone_eval(coco_gt, coco_det, iou_type, self.coco.imgs, ri, rj)
 ```
 
-In `/home/anaconda3/envs/your_env/lib/python3.8/site-packages/pycocotools/cocoeval.py`, we copy the class `COCO_eval` to a new one `COCO_zone_eval:`
+In [cocoeval.py](https://github.com/Zzh-tju/ZoneEval/blob/main/pycocotools/pycocotools/cocoeval.py), we copy the class `COCOeval` to a new one `COCO_zone_eval`.
 
+Then,
 ```python
 class COCO_zone_eval:
     def __init__(self, cocoGt=None, cocoDt=None, iouType='segm', imgs=None, ri=0.0, rj=0.5):
