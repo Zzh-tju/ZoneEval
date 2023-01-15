@@ -2,6 +2,33 @@
 
 Let’s see what this looks like in practice.
 
+### Overall process
+
+We keep the main body of mmdetection unchanged. All the functions for zone evaluation are copied from the original ones.
+For examples, 
+
+`get_bboxes()` $\rightarrow$ `get_zone_bboxes()`, 
+
+`_get_bboxes_single()` $\rightarrow$ `_get_zone_bboxes_single()`,
+
+`_bbox_post_process()` $\rightarrow$ `_zone_bbox_post_process()`.
+
+Please refer to [base_dense_head.py](mmdet/models/dense_heads/base_dense_head.py).
+
+In [_zone_bbox_post_process](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/dense_heads/base_dense_head.py#L507),
+we define zones as a series of annular regions. You can define the zone shape to be whatever you want.
+
+Then, in [single_stage.py](mmdet/models/detectors/single_stage.py), it recieves 5 zone detections.
+
+In [multi_gpu_test](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/apis/test.py#L81),
+it packs up the 5 zone detections.
+
+In [test.py](tools/test.py), the function `zone_evaluate()` evaluates the zone detections and return the zone metrics.
+
+For VOC, the ignored ground-truth boxes are defined in [mean_ap.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/core/evaluation/mean_ap.py#L265). For MS COCO, it lies in [cocoeval.py](https://github.com/Zzh-tju/ZoneEval/blob/main/pycocotools/pycocotools/cocoeval.py#L596).
+
+### Detailed process
+
 Add `ri, rj, img_w, img_h` in the `_zone_bbox_post_process()` function of `/mmdet/models/dense_heads/base_dense_head.py`.
 ```python
 from mmdet.core import bbox_xyxy_to_cxcywh
