@@ -2,4 +2,4 @@
 
 ### Customize zones
 
-Please refer to [Implementation of Zone Evaluation](tutorials/implementation.md#implementation-of-zone-evaluation).
+Please refer to [Implementation of Zone Evaluation](main/tutorials/implementation.md#implementation-of-zone-evaluation).
