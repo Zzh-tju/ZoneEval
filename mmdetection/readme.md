@@ -12,3 +12,6 @@ For examples,
 `_bbox_post_process()` $\rightarrow$ `_zone_bbox_post_process()`.
 
 Please refer to [base_dense_head.py](mmdet/models/dense_heads/base_dense_head.py).
+
+In [_zone_bbox_post_process](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/dense_heads/base_dense_head.py#L507),
+we define zones as a series of annular regions.
