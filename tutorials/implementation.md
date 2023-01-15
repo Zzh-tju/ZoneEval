@@ -276,6 +276,8 @@ where we set all the ground-truth boxes whose centers are outside the zone to be
 
 Of course, we pack up `pycocotools` in our repository.
 
+#### OK, let's have fun with zone evaluation.
+
 ## Implementation of SELA
 
 ### SELA (frequency-based approach)
