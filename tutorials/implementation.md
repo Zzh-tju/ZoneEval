@@ -15,7 +15,7 @@ For examples,
 
 Please refer to [base_dense_head.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/dense_heads/base_dense_head.py).
 In the following, we take one-stage dense detector as example. For multi-stage detectors, it is similar.
-Please take a look at [two_stage.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/detectors/two_stage.py#L187) and [standard_roi_head.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/roi_heads/standard_roi_head.py).
+Please take a look at [two_stage.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/detectors/two_stage.py#L187) and [standard_roi_head.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/roi_heads/standard_roi_head.py#L269).
 
 In [_zone_bbox_post_process](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/dense_heads/base_dense_head.py#L507),
 we define zones as a series of annular regions. You can define the zone shape to be whatever you want.
