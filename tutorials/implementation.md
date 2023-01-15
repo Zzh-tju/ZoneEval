@@ -282,6 +282,8 @@ Finally, once we get ZP of 5 zones, we calculate [Spatial equilibrium Precision]
 SP = 0.36 * ZP[0,:] + 0.28 * ZP[1,:] + 0.2 * ZP[2,:] + 0.12 * ZP[3,:] + 0.04 * ZP[4,:]
 ```
 
+We expect the detector to perform uniformly and well in all zones.
+
 #### OK, let's have fun with zone evaluation.
 
 ## Implementation of SELA
