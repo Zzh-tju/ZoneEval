@@ -287,10 +287,12 @@ Of course, we pack up `pycocotools` in our repository.
 ```python
 model = dict(
     train_cfg = dict(
-        assigner=dict(type='ATSSAssigner', topk=9, gamma=0.2),   # gamma=0.2 is particularly chosen for VOC, while 0.1 by default for all the other datasets.
+        assigner=dict(type='ATSSAssigner', topk=9, gamma=0.2),
         allowed_border=-1,
         pos_weight=-1,
         debug=False))
+
+# where gamma=0.2 is particularly chosen for VOC, while 0.1 by default for all the other datasets.
 ```
 
 2. `mmdet/models/dense_heads/gfl_sela_head.py`
