@@ -274,6 +274,8 @@ class COCO_zone_eval:
 ```
 where we set all the ground-truth boxes whose centers are outside the zone to be 'ignored'.
 
+Finally, once we get ZP of 5 zones, we calculate [Spatial equilibrium Precision](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/tools/test.py#L393) (SP) by computing the area weighted sum of ZP.
+
 Of course, we pack up `pycocotools` in our repository.
 
 #### OK, let's have fun with zone evaluation.
@@ -293,6 +295,7 @@ model = dict(
         debug=False))
 
 # where gamma=0.2 is particularly chosen for VOC, while 0.1 by default for all the other datasets.
+# Of course, you can search a better gamma for different application scenarios.
 ```
 
 2. `mmdet/models/dense_heads/gfl_sela_head.py`
