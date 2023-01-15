@@ -14,4 +14,13 @@ For examples,
 Please refer to [base_dense_head.py](mmdet/models/dense_heads/base_dense_head.py).
 
 In [_zone_bbox_post_process](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/dense_heads/base_dense_head.py#L507),
-we define zones as a series of annular regions.
+we define zones as a series of annular regions. You can define the zone shape to be whatever you want.
+
+Then, in [single_stage.py](mmdet/models/detectors/single_stage.py), it recieves 5 zones.
+
+In [multi_gpu_test](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/apis/test.py#L81),
+it packs up the detection results of 5 zones.
+
+In [test.py](tools/test.py), the function `zone_evaluate()` evaluates the zone results.
+
+For VOC, the ignored ground-truth boxes are defined in [mean_ap.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/core/evaluation/mean_ap.py#L265). For MS COCO, it lies in [cocoeval.py](https://github.com/Zzh-tju/ZoneEval/blob/main/pycocotools/pycocotools/cocoeval.py#L596).
