@@ -278,6 +278,10 @@ Of course, we pack up `pycocotools` in our repository.
 
 Once we get ZP of 5 zones, we calculate the variance of ZP to measure the degree of discreteness for zone performance.
 
+```python
+ZP_var = np.var(ZP, axis=0)
+```
+
 Finally, we calculate [Spatial equilibrium Precision](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/tools/test.py#L393) (SP) by computing the area weighted sum of ZP.
 
 ```python
