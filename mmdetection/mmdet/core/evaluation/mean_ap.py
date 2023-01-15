@@ -238,52 +238,21 @@ def tpfp_default(det_bboxes,
     return tp, fp
 
 
-def get_cls_results(det_results, annotations, data, class_id):
+def get_cls_results(det_results, annotations, class_id):
     """Get det results and gt information of a certain class.
-
     Args:
         det_results (list[list]): Same as `eval_map()`.
         annotations (list[dict]): Same as `eval_map()`.
         class_id (int): ID of a specific class.
-
     Returns:
         tuple[list[np.ndarray]]: detected bboxes, gt bboxes, ignored gt bboxes
     """
     cls_dets = [img_res[class_id] for img_res in det_results]
     cls_gts = []
     cls_gts_ignore = []
-    for i, ann in enumerate(annotations):
+    for ann in annotations:
         gt_inds = ann['labels'] == class_id
-        candidate_gt = ann['bboxes'][gt_inds, :]
-        #print('--------------------------')
-        img_w, img_h = data[i]['width'], data[i]['height']
-        gt_x, gt_y = (candidate_gt[:,0] + candidate_gt[:,2])*0.5, (candidate_gt[:,1] + candidate_gt[:,3])*0.5
-        #radius = 0.1
-        ri, rj = 0.0, 0.5
-        ind0 = (gt_x <= ri*img_w) | ( gt_x >= (1-ri)*img_w) | ( gt_y <= ri*img_h) | (gt_y >= (1-ri)*img_h)
-
-        ind1 = (gt_x > rj*img_w) & ( gt_x < (1-rj)*img_w) & ( gt_y > rj*img_h) & (gt_y < (1-rj)*img_h)
-
-        ind2 = (gt_x > ri*img_w) & ( gt_x < (1-ri)*img_w) & ( gt_y > ri*img_h) & (gt_y < (1-ri)*img_h)
-        ind3 = (gt_x <= rj*img_w) | ( gt_x >= (1-rj)*img_w) | ( gt_y <= rj*img_h) | (gt_y >= (1-rj)*img_h)
-        ind4 = ind2 & ind3
-        #ind4 = (gt_x >= 0)
-        if candidate_gt[ind0,:].any():
-            cls_gts_ignore.append(candidate_gt[ind0,:])
-        if candidate_gt[ind1,:].any():
-            cls_gts_ignore.append(candidate_gt[ind1,:])
-        cls_gts.append(candidate_gt[ind4,:])
-        '''
-        ind0 = gt_x < 0.5 * img_w
-        ind1 = gt_x >= 0.5 * img_w
-        cls_gts_ignore.append(candidate_gt[ind1,:])
-        cls_gts.append(candidate_gt[ind0,:])
-        '''
-
-        #ind1 = (gt_x > radius*img_w) & ( gt_x < (1-radius)*img_w) & ( gt_y > radius*img_h) & (gt_y < (1-radius)*img_h)
-        #ind0 = (gt_x <= radius*img_w) | ( gt_x >= (1-radius)*img_w) | ( gt_y <= radius*img_h) | (gt_y >= (1-radius)*img_h)
-        #cls_gts_ignore.append(candidate_gt[ind0,:])
-        #cls_gts.append(candidate_gt[ind1,:])
+        cls_gts.append(ann['bboxes'][gt_inds, :])
 
         if ann.get('labels_ignore', None) is not None:
             ignore_inds = ann['labels_ignore'] == class_id
@@ -291,7 +260,7 @@ def get_cls_results(det_results, annotations, data, class_id):
         else:
             cls_gts_ignore.append(np.empty((0, 4), dtype=np.float32))
 
-    return cls_dets, cls_gts, cls_gts_ignore
+    return cls_dets, cls_gts, 
 
 def get_cls_zone_results(det_results, annotations, data, class_id, ri, rj):
     """Get det results and gt information of a certain class.
