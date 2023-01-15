@@ -13,17 +13,19 @@ For examples,
 
 `_bbox_post_process()` $\rightarrow$ `_zone_bbox_post_process()`.
 
-Please refer to [base_dense_head.py](mmdet/models/dense_heads/base_dense_head.py).
+Please refer to [base_dense_head.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/dense_heads/base_dense_head.py).
+In the following, we take one-stage dense detector as example. For multi-stage detectors, it is similar.
+Please take a look at [two_stage.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/detectors/two_stage.py#L187) and [standard_roi_head.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/roi_heads/standard_roi_head.py).
 
 In [_zone_bbox_post_process](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/dense_heads/base_dense_head.py#L507),
 we define zones as a series of annular regions. You can define the zone shape to be whatever you want.
 
-Then, in [single_stage.py](mmdet/models/detectors/single_stage.py), it recieves 5 zone detections.
+Then, in [single_stage.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/models/detectors/single_stage.py), it recieves 5 zone detections.
 
 In [multi_gpu_test](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/apis/test.py#L81),
 it packs up the 5 zone detections.
 
-In [test.py](tools/test.py), the function `zone_evaluate()` evaluates the zone detections and return the zone metrics.
+In [test.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/tools/test.py), the function `zone_evaluate()` evaluates the zone detections and return the zone metrics.
 
 For VOC, the ignored ground-truth boxes are defined in [mean_ap.py](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/mmdet/core/evaluation/mean_ap.py#L265). For MS COCO, it lies in [cocoeval.py](https://github.com/Zzh-tju/ZoneEval/blob/main/pycocotools/pycocotools/cocoeval.py#L596).
 
