@@ -17,7 +17,7 @@ Our findings challenge the conventional sense of object detectors and show the i
 We hope these discoveries would stimulate the community to rethink how an excellent object detector should be.
 All the source code, evaluation protocols, and the tutorials will be made publicly available.
 
-More details can be found in [tutorials](https://github.com/Zzh-tju/SELA/blob/main/tutorial.md).
+More details can be found in [tutorials](https://github.com/Zzh-tju/ZoneEval/tree/main/tutorials/readme.md).
 
 
 ## Citation
