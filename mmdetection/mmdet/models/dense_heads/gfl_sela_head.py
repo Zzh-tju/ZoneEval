@@ -304,8 +304,8 @@ class GFLSELAHead(AnchorHead):
         # cls (qfl) loss
         if self.gamma is not None:
             # cost sensitive learning SELA
-            label_weights = label_weights[pos_inds] * (spatial_weights[pos_inds] * self.gamma + 1)	# for VOC 07+12
-            #label_weights = label_weights * (spatial_weights * self.gamma + 1)	# for COCO
+            label_weights = label_weights[pos_inds] * (spatial_weights[pos_inds] * self.gamma + 1)  # for VOC 07+12
+            #label_weights = label_weights * (spatial_weights * self.gamma + 1)  # for COCO
             
         loss_cls =  self.loss_cls(
             cls_score, (labels, score),
