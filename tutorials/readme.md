@@ -199,7 +199,7 @@ $$\mathcal{L}=\mathcal{L}*(1+\gamma\alpha(x^{a},y^{a}))$$
 The above two methods relieve the network from paying too much attention to the central zone. The following table is reported on VOC 07+12.
 
 | Method | Network  | $\gamma$ | $\text{ZP}^{0,5}$ | $\text{ZP}^{0,1}$ | $\text{ZP}^{1,2}$ |  $\text{ZP}^{2,3}$ |  $\text{ZP}^{3,4}$ |  $\text{ZP}^{4,5}$ | Variance | SP |
-|----------|--------|----------|-------------|-------------|-------------|--------------|--------------|--------------|----------|----|
+|----------|:--------:|:---------:|:-----------:|:-----------:|:-----------:|:------------:|:------------:|:------------:|:----------:|:----:|
 | [GFocal](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1yHylgbfFcR4e9GE6BB4DK9JB6xulJ63i/view?usp=sharing) | R18 | 0 | 51.9 | 31.5 | 37.7 | 40.1 | 43.4 | 52.8 | 49.4 | 37.2 |
 | [SELA (frequency-based)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1KyWeGEL1bVXVDqC2nAGK2hGYOTXMTGN_/view?usp=share_link) | R18  | 0.2 | 52.5 | 33.9 | 38.6 | 41.5 | 43.3 | 52.5 | 37.9 | 38.6 |
 | [SELA (cost-sensitive learning)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_cost_sensitive_learning_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1xcovCvZ0c9DoV1Sg5gP8yCp3EJ1MYSLB/view?usp=sharing) | R18 | 0.1 | 52.1 | 33.2 | 38.7 | 40.8 | 43.2 | 53.0 | 46.7 | 38.3 |
