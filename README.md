@@ -2,6 +2,8 @@
 
 ### This is the source codes of our [paper](https://arxiv.org/abs/2301.05957). We provide zone evaluation on [MMDetection v2.25.3](mmdetection), [YOLOv5](yolov5), and [YOLOv8](yolov8).
 
+### Here is a detailed step-by-step [tutorial](tutorials/readme.md).
+
 ```
 @article{zheng2023ZoneEval,
   title={Towards Spatial Equilibrium Object Detection},
@@ -10,7 +12,6 @@
   year={2023}
 }
 ```
-### Here is a detailed step-by-step [tutorial](tutorials/readme.md).
 
 ## Installation
 
