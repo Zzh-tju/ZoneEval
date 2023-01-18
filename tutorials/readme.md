@@ -202,6 +202,6 @@ The above two methods relieve the network from paying too much attention to the 
 |--------|----------|-------------|-------------|-------------|--------------|--------------|--------------|----------|----|
 | [GFocal](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1yHylgbfFcR4e9GE6BB4DK9JB6xulJ63i/view?usp=sharing) |0    | 51.9 | 31.5 | 37.7 | 40.1 | 43.4 | 52.8 | 49.4 | 37.2 |
 | [SELA (frequency-based)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1KyWeGEL1bVXVDqC2nAGK2hGYOTXMTGN_/view?usp=share_link) |0.2  | 52.5 | 33.9 | 38.6 | 41.5 | 43.3 | 52.5 | 37.9 | 38.6 |
-| [SELA (cost-sensitive learning)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_cost_sensitive_learning_r18_fpn_1x_voc.py) | 0.1  | 52.1 | 33.2 | 38.7 | 40.8 | 43.2 | 53.0 | 46.7 | 38.3 |
+| [SELA (cost-sensitive learning)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_cost_sensitive_learning_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1xcovCvZ0c9DoV1Sg5gP8yCp3EJ1MYSLB/view?usp=sharing) | 0.1  | 52.1 | 33.2 | 38.7 | 40.8 | 43.2 | 53.0 | 46.7 | 38.3 |
 
 The implementation can be seen in [SELA implementation](implementation.md#implementation-of-sela).
