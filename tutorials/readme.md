@@ -204,4 +204,23 @@ The above two methods relieve the network from paying too much attention to the 
 | [SELA (frequency-based)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1KyWeGEL1bVXVDqC2nAGK2hGYOTXMTGN_/view?usp=share_link) | R18  | 0.2 | 52.5 | 33.9 | 38.6 | 41.5 | 43.3 | 52.5 | 37.9 | 38.6 |
 | [SELA (cost-sensitive learning)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_cost_sensitive_learning_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1xcovCvZ0c9DoV1Sg5gP8yCp3EJ1MYSLB/view?usp=sharing) | R18 | 0.1 | 52.1 | 33.2 | 38.7 | 40.8 | 43.2 | 53.0 | 46.7 | 38.3 |
 
+The following table is reported on COCO val2017.
+
+| Method | Network  | $\gamma$ | $\text{ZP}^{0,5}$ | $\text{ZP}^{0,1}$ | $\text{ZP}^{1,2}$ |  $\text{ZP}^{2,3}$ |  $\text{ZP}^{3,4}$ |  $\text{ZP}^{4,5}$ | Variance | SP |
+|----------|:--------:|:---------:|:-----------:|:-----------:|:-----------:|:------------:|:------------:|:------------:|:----------:|:----:|
+| [GFocal](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_r50_fpn_1x_coco.py) [[GoogleDrive]](https://drive.google.com/file/d/17k6_r3iETnZakJW6ccpCWTkAvJLe3SLf/view?usp=sharing) | R50 | 0 | 40.1 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 | 14.4 | 35.7 |
+| [SELA (cost-sensitive learning)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_cost_sensitive_learning_r50_fpn_1x_coco.py) [[GoogleDrive]](https://drive.google.com/file/d/1j_oViW5y97HPthdoGwIzTbiNRFuYoUHW/view?usp=sharing) | R50 | 0.2 | 40.0 | 31.4 | 37.7 | 38.9 | 38.6 | 42.2 | 12.4 | 36.0 |
+
+Note:
+
+ - For cost-sensitive learning approach on VOC 07+12, we find that it would be better to apply the spatial weighting function on classification loss and bbox regression loss on the positive locations, while it would be better to apply on full map for classification loss on COCO.
+ 
+ If you train SELA (cost-sensitive learning) on COCO, you enable the second.
+ 
+ ```python
+        if self.gamma is not None:
+            # cost sensitive learning SELA
+            #label_weights = label_weights[pos_inds] * (spatial_weights[pos_inds] * self.gamma + 1)	# for VOC 07+12
+            label_weights = label_weights * (spatial_weights * self.gamma + 1)	# for COCO
+ ```
 The implementation can be seen in [SELA implementation](implementation.md#implementation-of-sela).
