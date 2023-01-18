@@ -1,4 +1,4 @@
-_base_ = ['../_base_/datasets/voc0712.py', '../_base_/default_runtime.py']
+_base_ = ['../others/_base_/datasets/voc0712.py', '../others/_base_/default_runtime.py']
 model = dict(
     type='GFL',
     pretrained='torchvision://resnet18',
@@ -52,7 +52,7 @@ model = dict(
         zone_eval=True))
 
 # optimizer
-optimizer = dict(type='SGD', lr=0.0, momentum=0.9, weight_decay=0.0001)
+optimizer = dict(type='SGD', lr=0.00375, momentum=0.9, weight_decay=0.0001)
 optimizer_config = dict(grad_clip=None)
 # learning policy
 lr_config = dict(
