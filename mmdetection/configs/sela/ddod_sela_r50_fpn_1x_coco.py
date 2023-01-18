@@ -1,6 +1,6 @@
 _base_ = [
-    '../_base_/datasets/coco_detection.py',
-    '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
+    '../others/_base_/datasets/coco_detection.py',
+    '../others/_base_/schedules/schedule_1x.py', '../others/_base_/default_runtime.py'
 ]
 
 model = dict(
