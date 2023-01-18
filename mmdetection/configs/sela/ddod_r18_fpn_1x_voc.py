@@ -1,5 +1,5 @@
 _base_ = [
-    '../_base_/datasets/voc0712.py', '../_base_/default_runtime.py'
+    '../others/_base_/datasets/voc0712.py', '../others/_base_/default_runtime.py'
 ]
 
 model = dict(
