@@ -220,7 +220,7 @@ Note:
  ```python
         if self.gamma is not None:
             # cost sensitive learning SELA
-            #label_weights = label_weights[pos_inds] * (spatial_weights[pos_inds] * self.gamma + 1)	# for VOC 07+12
-            label_weights = label_weights * (spatial_weights * self.gamma + 1)	# for COCO
+            #label_weights = label_weights[pos_inds] * (spatial_weights[pos_inds] * self.gamma + 1)  # for VOC 07+12
+            label_weights = label_weights * (spatial_weights * self.gamma + 1)  # for COCO
  ```
 The implementation can be seen in [SELA implementation](implementation.md#implementation-of-sela).
