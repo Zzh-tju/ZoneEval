@@ -1,6 +1,6 @@
 # SELA
 
-> [Towards Spatial Equilibrium Object Detection](https://arxiv.org/abs/2006.04388)
+> [Towards Spatial Equilibrium Object Detection](https://arxiv.org/abs/2301.05957)
 
 <!-- [ALGORITHM] -->
 
@@ -28,7 +28,7 @@ We provide config files to reproduce the object detection results in the paper.
 @article{zheng2023ZoneEval,
   title={Towards Spatial Equilibrium Object Detection},
   author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Cheng, Ming-Ming},
-  journal={arxiv},
+  journal={arXiv preprint arXiv:2301.05957},
   year={2023}
 }
 ```
