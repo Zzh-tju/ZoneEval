@@ -16,10 +16,10 @@
 ## Introduction
 
 Semantic objects are unevenly distributed over images.
-In this paper, we study the spatial disequilibrium problem of modern object detectors and propose to quantify this **spatial bias** by measuring the detection performance over zones.
+In this paper, we study the **spatial disequilibrium problem** of modern object detectors and propose to quantify this "spatial bias" **by measuring the detection performance over zones.**
 Our analysis surprisingly shows that the spatial imbalance of objects has a great impact on the detection performance, limiting the robustness of detection applications.
-This motivates us to design a more generalized measurement, termed Spatial equilibrium Precision (SP), to better characterize the detection performance of object detectors.
-Furthermore, we also present a spatial equilibrium label assignment (SELA) to alleviate the spatial disequilibrium problem by injecting the prior spatial weight into the optimization process of detectors.
+This motivates us to design a more generalized measurement, termed **Spatial equilibrium Precision (SP)**, to better characterize the detection performance of object detectors.
+Furthermore, we also present a **spatial equilibrium label assignment (SELA)** to alleviate the spatial disequilibrium problem by injecting the prior spatial weight into the optimization process of detectors.
 Extensive experiments on PASCAL VOC, MS COCO, and 3 application datasets on face mask/fruit/helmet images demonstrate the advantages of our method.
 Our findings challenge the conventional sense of object detectors and show the indispensability of spatial equilibrium.
 **We hope these discoveries would stimulate the community to rethink how an excellent object detector should be.**
