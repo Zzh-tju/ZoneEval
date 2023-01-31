@@ -77,7 +77,7 @@ model = dict(
 
 Currently, we provide evaluation for various object detectors, and the pretrained weight file can be downloaded from MMDetection or their official websites.
 
-| Detector | Network & TS | SP | $\text{ZP}^{0,5}$| Variance | $\text{ZP}^{0,1}$ | $\text{ZP}^{1,2}$ | $\text{ZP}^{2,3}$ | $\text{ZP}^{3,4}$ | $\text{ZP}^{4,5}$ | FPS |
+| Detector | Network & TS | SP | $\text{ZP}^{0,5}$| Var | $\text{ZP}^{0,1}$ | $\text{ZP}^{1,2}$ | $\text{ZP}^{2,3}$ | $\text{ZP}^{3,4}$ | $\text{ZP}^{4,5}$ | FPS |
 |----------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 |[RetinaNet](mmdetection/configs/others/retinanet/retinanet_r50_fpn_1x_coco.py) | [R50_1x](https://download.openmmlab.com/mmdetection/v2.0/retinanet/retinanet_r50_fpn_1x_coco/retinanet_r50_fpn_1x_coco_20200130-c2398f9e.pth) | 32.0 | 36.5 | 14.8 | 27.3 | 33.3 | 35.5 | 34.5 | 39.2 | 35.4 |
 |[RetinaNet](mmdetection/configs/others/retinanet/retinanet_r50_fpn_1x_coco.py) | [R50_2x](https://download.openmmlab.com/mmdetection/v2.0/retinanet/retinanet_r50_fpn_2x_coco/retinanet_r50_fpn_2x_coco_20200131-fdb43119.pth) | 32.6 | 37.4 | 16.9 | 27.6 | 34.6 | 35.8 | 35.1 | 40.4 | 35.4 |
@@ -110,7 +110,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
  - '**TS**': Training Schedule. 
  - '**SP**': Spatial equilibrium Precision.
  - ' $\text{ZP}^{0,5}$ ': the traditional Average Precision.
- - '**Variance**': the variance of the 5 ZP ( $\text{ZP}^{0,1}$, $\text{ZP}^{1,2}$, ..., $\text{ZP}^{4,5}$ ).
+ - '**Var**': the variance of the 5 ZP ( $\text{ZP}^{0,1}$, $\text{ZP}^{1,2}$, ..., $\text{ZP}^{4,5}$ ).
  - '**FPS**' is measured on a single RTX 3090 GPU. Class score threshold=0.05, NMS IoU threshold=0.6. The test resolution is 640 for YOLOv5 and YOLOv8, while [1333, 800] for the others.
  - If you test DETR series, you must modify the `simple_test()` function in `mmdet/models/detectors/single_stage.py`,
 
