@@ -78,7 +78,7 @@ model = dict(
 Currently, we provide evaluation for various object detectors, and the pretrained weight file can be downloaded from MMDetection or their official websites.
 
 | Detector | Network & TS  | $\text{ZP}^{0,5}$| Var | $\text{ZP}^{0,1}$ | $\text{ZP}^{1,2}$ | $\text{ZP}^{2,3}$ | $\text{ZP}^{3,4}$ | $\text{ZP}^{4,5}$ | FPS |
-|----------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+|----------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 |[RetinaNet](mmdetection/configs/others/retinanet/retinanet_r50_fpn_1x_coco.py) | [R50_1x](https://download.openmmlab.com/mmdetection/v2.0/retinanet/retinanet_r50_fpn_1x_coco/retinanet_r50_fpn_1x_coco_20200130-c2398f9e.pth)  | 36.5 | 14.8 | 27.3 | 33.3 | 35.5 | 34.5 | 39.2 | 35.4 |
 |[RetinaNet](mmdetection/configs/others/retinanet/retinanet_r50_fpn_1x_coco.py) | [R50_2x](https://download.openmmlab.com/mmdetection/v2.0/retinanet/retinanet_r50_fpn_2x_coco/retinanet_r50_fpn_2x_coco_20200131-fdb43119.pth)  | 37.4 | 16.9 | 27.6 | 34.6 | 35.8 | 35.1 | 40.4 | 35.4 |
 |[Faster R-CNN](mmdetection/configs/others/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py) | [R50_1x](https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth)  | 37.4 | 11.8 | 29.3 | 34.2 | 36.1 | 35.0 | 39.9 | 37.5 |
