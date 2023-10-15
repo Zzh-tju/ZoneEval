@@ -1,4 +1,4 @@
-<div align="center"><img src="tutorials/flyleaf.png" width="400"/></div>
+<div align="center"><img src="tutorials/flyleaf.png" width="450"/></div>
 
 ### This is the source codes of our [paper](https://arxiv.org/abs/2301.05957). We provide zone evaluation on [MMDetection v2.25.3](mmdetection), [YOLOv5](yolov5), and [YOLOv8](yolov8).
 
