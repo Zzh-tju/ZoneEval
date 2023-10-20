@@ -1,3 +1,5 @@
+# Zone Evaluation: Revealing Spatial Bias in Object Detection
+
 <div align="center"><img src="tutorials/flyleaf.png" width="450"/></div>
 
 ### This is the source codes of our [paper](https://arxiv.org/abs/2301.05957). We provide zone evaluation on [MMDetection v2.25.3](mmdetection), [YOLOv5](yolov5), and [YOLOv8](yolov8).
@@ -6,8 +8,8 @@
 
 ```
 @article{zheng2023ZoneEval,
-  title={Towards Spatial Equilibrium Object Detection},
-  author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Cheng, Ming-Ming},
+  title={Zone Evaluation: Revealing Spatial Bias in Object Detection},
+  author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Wang, Ping and Cheng, Ming-Ming},
   journal={arXiv preprint arXiv:2301.05957},
   year={2023}
 }
@@ -15,14 +17,17 @@
 
 ## Introduction
 
-Semantic objects are unevenly distributed over images.
-In this paper, we study the **spatial disequilibrium problem** of modern object detectors and propose to quantify this "spatial bias" **by measuring the detection performance over zones.**
-Our analysis surprisingly shows that the spatial imbalance of objects has a great impact on the detection performance, limiting the robustness of detection applications.
-This motivates us to design a more generalized measurement, termed **Spatial equilibrium Precision (SP)**, to better characterize the detection performance of object detectors.
-Furthermore, we also present a **spatial equilibrium label assignment (SELA)** to alleviate the spatial disequilibrium problem by injecting the prior spatial weight into the optimization process of detectors.
-Extensive experiments on PASCAL VOC, MS COCO, and 3 application datasets on face mask/fruit/helmet images demonstrate the advantages of our method.
-Our findings challenge the conventional sense of object detectors and show the indispensability of spatial equilibrium.
-**We hope these discoveries would stimulate the community to rethink how an excellent object detector should be.**
+A fundamental limitation of object detectors is that they suffer from ``spatial bias'', and in particular perform less satisfactorily when detecting objects near image borders.
+For a long time, there has been a lack of effective ways to measure and identify spatial bias, and little is known about where it comes from and what degree it is.
+To this end, we present a new zone evaluation protocol, extending from the traditional evaluation to a more generalized one, which measures the detection performance over zones, yielding a series of Zone Precisions (ZPs).
+For the first time, we provide numerical results, showing that the object detectors perform quite unevenly across the zones.
+Surprisingly, the detector's performance in the 96% border zone of the image does not reach the AP value (Average Precision, commonly regarded as the average detection performance in the entire image zone).
+To better understand spatial bias, a series of heuristic experiments are conducted.
+Our investigation excludes two intuitive conjectures about spatial bias that the object scale and the absolute positions of objects barely influence the spatial bias.
+We find that the key lies in the human-imperceptible divergence in data patterns between objects in different zones, thus eventually forming a visible performance gap between the zones.
+With these findings, we finally discuss a future direction for object detection, namely, spatial disequilibrium problem, aiming at pursuing a balanced detection ability over the entire image zone.
+By broadly evaluating 10 popular object detectors and 5 detection datasets, we shed light on the spatial bias of object detectors.
+We hope this work could raise a focus on detection robustness.
 
 ## Installation
 
@@ -91,7 +96,7 @@ Currently, we provide evaluation for various object detectors, and the pretraine
 |[DETR](mmdetection/configs/others/detr/detr_r50_8x2_150e_coco.py) | [R50_150e](https://download.openmmlab.com/mmdetection/v2.0/detr/detr_r50_8x2_150e_coco/detr_r50_8x2_150e_coco_20201130_194835-2c4b8974.pth)  | 40.1 | 26.9 | 29.8 | 36.2 | 39.8 | 39.1 | 45.7 | 49.9 |
 |[RetinaNet](mmdetection/configs/others/pvt/retinanet_pvt-s_fpn_1x_coco.py) | [PVT-s_1x](https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvt-s_fpn_1x_coco/retinanet_pvt-s_fpn_1x_coco_20210906_142921-b6c94a5b.pth)  | 40.4 | 19.7 | 30.8 | 36.9 | 39.0 | 37.4 | 44.6 | 20.0 |
 [Cascade R-CNN](mmdetection/configs/others/cascade_rcnn/cascade_rcnn_r50_fpn_1x_coco.py) | [R50_1x](https://download.openmmlab.com/mmdetection/v2.0/cascade_rcnn/cascade_rcnn_r50_fpn_1x_coco/cascade_rcnn_r50_fpn_1x_coco_20200316-3dc56deb.pth)  | 40.3 | 18.7 | 30.9 | 36.6 | 39.2 | 38.6 | 44.2 | 30.7 |
-|[GFocal](mmdetection/configs/sela/gfl_r50_fpn_1x_coco.py) | [R50_1x](https://drive.google.com/file/d/17k6_r3iETnZakJW6ccpCWTkAvJLe3SLf/view?usp=sharing)  | 40.1 | 16.9 | 31.1 | 37.5 | 39.4 | 38.5 | 43.8 | 37.2 |
+|[GFocal](mmdetection/configs/sela/gfl_r50_fpn_1x_coco.py) | [R50_1x](https://drive.google.com/file/d/1c5DCfs7r0iICydy2SiWQMIte_Nf4D1dy/view?usp=share_link)  | 40.1 | 16.9 | 31.1 | 37.5 | 39.4 | 38.5 | 43.8 | 37.2 |
 | |
 |[YOLOv8-s](https://github.com/ultralytics/ultralytics) |  | 44.9 | 24.4 | 33.4 | 42.2 | 44.3 | 43.2 | 48.5 | 128.5 |
 |[Cascade Mask R-CNN](mmdetection/configs/others/cascade_rcnn/cascade_mask_rcnn_r101_caffe_fpn_mstrain_3x_coco.py) | [R101_3x](https://download.openmmlab.com/mmdetection/v2.0/cascade_rcnn/cascade_mask_rcnn_r101_caffe_fpn_mstrain_3x_coco/cascade_mask_rcnn_r101_caffe_fpn_mstrain_3x_coco_20210707_002620-a5bd2389.pth)  | 45.4 | 22.4 | 34.7 | 41.6 | 44.3 | 44.4 | 49.1 | 18.7 |
