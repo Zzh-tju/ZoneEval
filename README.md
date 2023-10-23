@@ -2,7 +2,7 @@
 
 <div align="center"><img src="tutorials/flyleaf.png" width="450"/></div>
 
-### This is the source codes of our [paper](https://arxiv.org/abs/2301.05957). We provide zone evaluation on [MMDetection v2.25.3](mmdetection), [YOLOv5](yolov5), and [YOLOv8](yolov8).
+### This is the source codes of our [paper](https://arxiv.org/abs/2310.13215). We provide zone evaluation on [MMDetection v2.25.3](mmdetection), [YOLOv5](yolov5), and [YOLOv8](yolov8).
 
 ### Here is a detailed step-by-step [tutorial](tutorials/readme.md).
 
@@ -10,7 +10,7 @@
 @article{zheng2023ZoneEval,
   title={Zone Evaluation: Revealing Spatial Bias in Object Detection},
   author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Wang, Ping and Cheng, Ming-Ming},
-  journal={arXiv preprint arXiv:2301.05957},
+  journal={arXiv preprint arXiv:2310.13215},
   year={2023}
 }
 ```
