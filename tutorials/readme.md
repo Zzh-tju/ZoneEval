@@ -43,10 +43,10 @@ This is problematic for many real-world applications, e.g., fire/smoke detection
 
 Now, even if there is a spatial bias in detection performance, how can we capture this?
 
-Quantify!
+**Quantify!**
 
 Numerical quantification is an urgent first step. Does the detector have any spatial bias?
-If so, how much is the deviation? How can we make some targeted improvements to make it spatially equilibrated?
+If so, how much? How can we make some improvements to make it spatially equilibrated?
 All of this must be based on numerical quantification, otherwise, it makes no sense.
 
 # 3. Zone Evaluation
