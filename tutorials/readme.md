@@ -41,8 +41,7 @@ This is problematic for many real-world applications, e.g., fire/smoke detection
 
 <div align="center"><img src="fire-may-appear-anywhere.png" width="900"/></div>
 
-Now, even if there is a spatial bias in detection performance, how do we capture this?
-Can the common metric AP (Average Precision) tell us about this? Or, can we only rely on visual observation?
+Now, even if there is a spatial bias in detection performance, how can we capture this?
 
 Quantify!
 
