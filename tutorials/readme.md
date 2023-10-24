@@ -332,6 +332,14 @@ Note:
  ```
 The implementation can be seen in [SELA implementation](implementation.md#implementation-of-sela).
 
+### Visualization 
+
+Visualizations of detection results for GFocal (first row) and GFocal + SELA (second row). Our method boosts the detection performance for the border zone.
+Our method can significantly improve the detection performance of the border zone.
+We believe that further exploration of spatial equilibrium is clearly worthy and important for future robust detection applications.
+
+<div align="center"><img src="PCC-SCC.png" width="550"/></div>
+
 ### Correlation with Object Distribution
 
 You may wonder how would the performance be if we define a finer zone division, for instance, $11\times 11$ zones, just like for counting the center points of all the ground-truth boxes, i.e., the object distribution.
@@ -350,3 +358,23 @@ As a reminder, the PCC only reflects the linear correlation of two given vectors
 The Spearman correlation reflects a higher ranking correlation between the mZP and the object distribution with all the SCC $>0.45$.
 This illustrates that the detection performance has a similar trend to the object distribution.
 Our SELA substantially reduces these correlations, indicating a lower correlation with the object distribution.
+
+# Significance, Challenges and Outlook
+
+### Significance
+
+Spatial bias is a natural obstacle in object detection that the detectors usually show a performance drop in the border zone, which occupies a large proportion of the image area.
+While the classic AP metric is still considered to be the primary measurement, it is difficult to reveal spatial bias and is challenging to comprehensively reflect the real performance of object detectors.
+Maximizing the AP metric does not fully indicate a robust detection and performs well in all zones.
+Zone evaluation supplements a series of zone metrics, compensates for the drawbacks of traditional evaluation, and captures more information about detection performance.
+We hope this work could inspire the community to rethink the evaluation of object detectors and stimulate further explorations on spatial bias, and the solutions to the spatial disequilibrium problem.
+
+### Challenges
+
+There are several challenges left behind in this work:
+
+1️⃣ **Interpretability of spatial bias in various object detectors.** This work mainly reveals the existence and the discrete amplitude of spatial bias in object detectors, whereas the specific reason why different detectors perform quite differently is still frozen in the ice. The neural network architecture designs, pre-training data, optimization, training strategies, and even hyper-parameters may play a role in the spatial bias. Further exploration to answer the above question is of paramount importance.
+
+2️⃣ **The effect of other potential factors on the spatial bias.** Currently, we pinpointed an evident correlation between imbalanced object distribution and zone performance. There are some complicated yet implicit factors such as image blur, object occlusion, border effect, noise, etc., that may also contribute to spatial bias. However, current detection datasets almost lack such annotations for the above factors, making it difficult to establish a quantitative analysis.
+
+3️⃣ **Zone evaluation for other vision tasks.** Researchers have found some clues that the image generator may generate distorted content near the image border. Hence, the spatial bias may also exist in many vision tasks. Our zone evaluation may have great potential to reveal spatial bias, whether for high-level or low-level vision tasks.
