@@ -39,7 +39,7 @@ Analogizing it to object detection, we have a reasonable guess: uneven distribut
 
 This is problematic for many real-world applications, e.g., fire/smoke detection, collision prevention in self-driving cars, and crowd counting and localization, where the border zone occupies a large proportion of the image area.
 
-<div align="center"><img src="fire-may-appear-anywhere.png" width="900"/></div>
+<div align="center"><img src="fire-may-appear-anywhere.png" width="800"/></div>
 
 Now, even if there is a spatial bias in detection performance, how can we capture this?
 
