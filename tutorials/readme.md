@@ -338,7 +338,7 @@ Visualizations of detection results for GFocal (first row) and GFocal + SELA (se
 Our method can significantly improve the detection performance of the border zone.
 We believe that further exploration of spatial equilibrium is clearly worthy and important for future robust detection applications.
 
-<div align="center"><img src="visualization.png" width="550"/></div>
+<div align="center"><img src="visualization.png" width="800"/></div>
 
 ### Correlation with Object Distribution
 
