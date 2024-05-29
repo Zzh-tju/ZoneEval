@@ -4,6 +4,8 @@
 
 ### This is the source codes of our [paper](https://arxiv.org/abs/2310.13215). We provide zone evaluation on [MMDetection v2.25.3](mmdetection), [YOLOv5](yolov5), and [YOLOv8](yolov8).
 
+#### Our paper is accepted by IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI 2024).
+
 ### Here is a detailed step-by-step [tutorial](tutorials/readme.md).
 
 ```
