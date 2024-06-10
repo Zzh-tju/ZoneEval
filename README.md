@@ -9,7 +9,7 @@
 ### Here is a detailed step-by-step [tutorial](tutorials/readme.md).
 
 ```
-@article{zheng2023ZoneEval,
+@article{zheng2024ZoneEval,
   title={Zone Evaluation: Revealing Spatial Bias in Object Detection},
   author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Wang, Ping and Cheng, Ming-Ming},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
