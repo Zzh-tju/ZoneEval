@@ -12,8 +12,8 @@
 @article{zheng2023ZoneEval,
   title={Zone Evaluation: Revealing Spatial Bias in Object Detection},
   author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Wang, Ping and Cheng, Ming-Ming},
-  journal={arXiv preprint arXiv:2310.13215},
-  year={2023}
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2024}
 }
 ```
 
