@@ -302,7 +302,7 @@ It can be seen that SELA relaxes the positive sample selection conditions for ob
 Therefore, more anchor points will be selected as positive samples for them.
 Notice that the above application is actually a frequency-based approach, just like many of the class rebalance sampling strategies proposed for the long-tail class imbalance problem.
 
-### SELA (cost-sensitive learning)
+### SE loss (cost-sensitive learning)
 
 We exploit the spatial weight to enlarge the loss weight for positive samples.
 Let $\mathcal{L}$ be the loss function of a given positive anchor point $(x^a, y^a)$.
@@ -316,11 +316,11 @@ The above two methods relieve the network from paying too much attention to the 
 |----------|:--------:|:---------:|:-----------:|:-----------:|:-----------:|:------------:|:------------:|:------------:|:----------:|
 | [GFocal](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1yHylgbfFcR4e9GE6BB4DK9JB6xulJ63i/view?usp=sharing) | R18 | 0 | 52.2 | 53.6 | 34.3 | 39.6 | 42.5 | 46.6 | 56.1 |
 | [SELA (frequency-based)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1KyWeGEL1bVXVDqC2nAGK2hGYOTXMTGN_/view?usp=share_link) | R18  | 0.2 | 52.8 | 37.7 | 37.6 | 40.3 | 43.8 | 46.9 | 55.4 |
-| [SELA (cost-sensitive learning)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_cost_sensitive_learning_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1xcovCvZ0c9DoV1Sg5gP8yCp3EJ1MYSLB/view?usp=sharing) | R18 | 0.1 | 52.5 | 41.6 | 37.2 | 40.6 | 42.9 | 46.5 | 56.0 |
+| [SE loss (cost-sensitive learning)](https://github.com/Zzh-tju/ZoneEval/blob/main/mmdetection/configs/sela/gfl_sela_cost_sensitive_learning_r18_fpn_1x_voc.py) [[GoogleDrive]](https://drive.google.com/file/d/1xcovCvZ0c9DoV1Sg5gP8yCp3EJ1MYSLB/view?usp=sharing) | R18 | 0.1 | 52.5 | 41.6 | 37.2 | 40.6 | 42.9 | 46.5 | 56.0 |
 
 Note:
 
- - For cost-sensitive learning approach on VOC 07+12, we find that it would be better to apply the spatial weighting function on classification loss and bbox regression loss on the positive locations, while it would be better to apply on full map for classification loss on COCO.
+ - For SE loss on VOC 07+12, we find that it would be better to apply the spatial weighting function on classification loss and bbox regression loss on the positive locations, while it would be better to apply on full map for classification loss on COCO.
  
  If you train SELA (cost-sensitive learning) on COCO, you enable the second.
  
