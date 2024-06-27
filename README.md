@@ -13,7 +13,8 @@
   title={Zone Evaluation: Revealing Spatial Bias in Object Detection},
   author= {Zheng, Zhaohui and Chen, Yuming and Hou, Qibin and Li, Xiang and Wang, Ping and Cheng, Ming-Ming},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2024}
+  year={2024},
+  doi={10.1109/TPAMI.2024.3409416}
 }
 ```
 
