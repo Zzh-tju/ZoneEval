@@ -48,6 +48,7 @@ git clone https://github.com/Zzh-tju/ZoneEval.git
 cd ZoneEval/pycocotools
 
 pip install -e .
+(If you encounter the compile error, try `pip install cython==0.29.36`)
 
 cd ..
 
