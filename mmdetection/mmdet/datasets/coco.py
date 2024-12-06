@@ -806,6 +806,7 @@ class CocoDataset(CustomDataset):
                     cocoEval.summarize()
                 print_log('\n' + redirect_string.getvalue(), logger=logger)
 
+                class_ap = np.zeros([80])
                 if classwise:  # Compute per-category AP
                     # Compute per-category AP
                     # from https://github.com/facebookresearch/detectron2/
@@ -813,7 +814,6 @@ class CocoDataset(CustomDataset):
                     # precision: (iou, recall, cls, area range, max dets)
                     assert len(self.cat_ids) == precisions.shape[2]
 
-                    class_ap = np.zeros([80])
                     results_per_category = []
                     for idx, catId in enumerate(self.cat_ids):
                         # area range index 0: all area ranges
